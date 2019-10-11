@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductCategoryService} from '../product-category.service';
-import { Category} from '../category';
+import { ProductCategoryService} from '../../product-category.service';
+import { Category} from '../../category';
 
 @Component({
   selector: 'app-main-layout',
