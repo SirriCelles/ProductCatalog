@@ -5,11 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './navigation/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MainLayoutComponent
-  ],
+    MainLayoutComponent,
+    FooterComponent
+  ]
+,
   imports: [
     BrowserModule,
     AppRoutingModule,
