@@ -15,6 +15,6 @@ export class ProductCategoryService {
   //function gets all categories
   getCategory():Observable<Category[]>
   {
-    return this.http.get<Category[]>(this.url);
+    return this.http.get<Category[]>("https://product-api-gg-c.herokuapp.com/api/category");
   }
 }

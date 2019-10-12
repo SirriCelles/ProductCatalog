@@ -1,8 +1,8 @@
 <div class="bg-light">
-    <h1 class="text-center">Main-Layout/Home Component</h1>
+    <h4 class="text-center">Main-Layout/Home Component</h4>
+    <div class="container">
     <div class="row">
-        <div class="col-sm-12  col-md-4"><img [src] = "categories.url"></div>
-        <div class="col-sm-12 col-md-4"></div>
-        <div class="col-sm-12 col-md-4"></div>
+        <div class="col-sm-6 bg-info text-light text-center" *ngFor = "let category of categories">{{ category.name }}</div>
+        <div class = "col-sm-6 bg-info text-light text-center">No category</div>
     </div>
 </div>
