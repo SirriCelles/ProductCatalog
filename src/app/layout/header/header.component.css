@@ -1,25 +1,49 @@
-.heading{
-    font-family: Lucida Calligraphy;
-    margin: 0 auto;
-    padding:1rem;
+
+nav{
+    height: auto;
+	position: relative;
+	width: 100%;
+  color:#fff;
+	border-bottom: 1px solid #CCCCCC;
+	border-top: 1px solid #DDDDDD;
+    background: 	#117DAC;
+    background: linear-gradient(#108fc2, #1372a0);
+    
 }
 
-/* styles horizontal line */
-.horizontal-line{
-    height: 0.5rem;
+/* .collapsibleNavbar ul{
+    font-size: 20px;
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 0;
+	margin: 15px;
+	color: #0F8AB9;
+} */
+
+
+.collapsibleNavbar a:link, a:visited {
+	color: #78828D;
+    color:#fff;
+  /* background-color: #117DAC; */
+  /* background: linear-gradient(#108fc2, #1372a0); */
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
 
-/* styles main-navigation */
-
-.main-navigation{
-    width: 100%;
+.collapsibleNavbar a:hover, a:active {
+  background-color:#136c98;
 }
 
-/* styling the links */
-.navigation-link{
-    width:10rem;
+#vertical-line{
+  border-left: 1px solid rgb(210, 211, 210);
+  height: 25px;
+  padding-right: 10px;
 }
 
-nav a.active{
-    color: #039be5;
+#vertical-line-small{
+  border-left: 1px solid rgb(210, 211, 210);
+  
 }

@@ -1,10 +1,11 @@
-<div class = "main-content">
-<div class="container all-category">
-    <div class="row">
-        <div class="col-sm-6 bg-info text-light text-center" *ngFor = "let category of categories">{{ category.name }}</div>
-        <div class = "col-sm-6 bg-info text-light text-center">No category</div>
-    </div>
-</div>
+<div class="bg-light">
+    <div class = "main-content">
+        <div class="all-category">
+            <!-- <div class="row">
+                <div class="col-sm-6 bg-info text-light text-center" *ngFor = "let category of categories">{{ category.name }}</div>
+                <div class = "col-sm-6 bg-info text-light text-center">No category</div>
+            </div> -->
+        </div>
 </div>
 <!-- displays product list on click of product link -->
 <router-outlet></router-outlet>
