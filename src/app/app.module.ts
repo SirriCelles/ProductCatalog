@@ -17,6 +17,7 @@ import { CategoryDetailComponent } from './category/category-list/category-detai
 import { CategoryEditComponent } from './category/category-list/category-edit/category-edit.component';
 import { CategoryCreateComponent } from './category/category-create/category-create.component';
 import { CategoryDeleteComponent } from './category/category-list/category-delete/category-delete.component';
+import { SearchComponent } from './layout/header/search/search.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { CategoryDeleteComponent } from './category/category-list/category-delet
     CategoryEditComponent,
     CategoryCreateComponent,
     CategoryDeleteComponent,
+    SearchComponent,
     
   ]
 ,
