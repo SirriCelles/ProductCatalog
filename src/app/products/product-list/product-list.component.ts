@@ -19,13 +19,4 @@ export class ProductListComponent implements OnInit {
           console.log(this.products);
         });
   }
-
-  // displays products gotten from the api response. this function is different from the other named similary in the service
-  // getAllProducts(){
-    // this.productService.getAllProducts()
-    // .subscribe(productData =>{
-      // this.product = productData;
-      // console.log(this.product);
-    // });
-  // }
 }
