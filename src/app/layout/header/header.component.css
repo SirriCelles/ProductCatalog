@@ -54,8 +54,13 @@ nav{
   background-color:#136c98;
 }
 
-#vl{
-    border-left: 1px solid rgb(210, 211, 210);
+#vertical-line{
+  border-left: 1px solid rgb(210, 211, 210);
   height: 25px;
-  padding-right: 20px;
+  padding-right: 10px;
+}
+
+#vertical-line-small{
+  border-left: 1px solid rgb(210, 211, 210);
+  
 }

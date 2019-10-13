@@ -1,0 +1,12 @@
+.main-content{
+    height: 30rem;
+    background-image: url("https://image.shutterstock.com/image-photo/set-household-kitchen-electronics-appliances-600w-1432770149.jpg");
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.all-category{
+    height: 10rem;
+    padding:3rem;
+}
