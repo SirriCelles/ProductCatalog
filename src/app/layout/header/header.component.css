@@ -3,3 +3,23 @@
     margin: 0 auto;
     padding:1rem;
 }
+
+/* styles horizontal line */
+.horizontal-line{
+    height: 0.5rem;
+}
+
+/* styles main-navigation */
+
+.main-navigation{
+    width: 100%;
+}
+
+/* styling the links */
+.navigation-link{
+    width:10rem;
+}
+
+nav a.active{
+    color: #039be5;
+}

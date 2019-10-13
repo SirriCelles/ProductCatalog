@@ -112,3 +112,9 @@
 .payments {
 	font-size: 1.5em;
 }
+
+footer{
+	bottom:0;
+	position: absolute;
+	width:100%;
+}

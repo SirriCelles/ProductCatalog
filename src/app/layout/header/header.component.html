@@ -1,3 +1,21 @@
 <h1 class = "bg-warning text-danger text-center heading">
     <marquee>GG-Trainee4 Product Catalog</marquee>
 </h1>
+
+<!-- horizontal line -->
+<div class="bg-light container-fluid horizontal-line"></div>
+
+<!-- adds a horizontal navigation to this component -->
+<section class = "bg-info">
+        <nav class = "text-center main-navigation">
+            <a class = "btn btn-primary navigation-link">Home</a>
+            <button routerLink = "/products-list" routerLinkActive = "active"
+            class = "btn btn-primary navigation-link">Products</button>
+            <a href = "#" class = "btn btn-primary navigation-link">Categories</a>
+            <a href = "#" class = "btn btn-primary navigation-link">About</a>
+            <a href = "#" class = "btn btn-primary navigation-link">News</a>
+        </nav>
+</section>
+
+<!-- displays product list on click of product link -->
+<router-outlet></router-outlet>
