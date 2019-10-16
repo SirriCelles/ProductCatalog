@@ -1,9 +1,10 @@
 body {
-    width: 100%;
+	width: 100%;
+	/* height: 100%; */
 }
 
 .footer {
-	height: auto;
+	height:210px ;
 	padding-bottom: 3rem;
 	position: relative;
 	width: 100%;
@@ -11,8 +12,7 @@ body {
 	border-bottom: 1px solid #CCCCCC;
 	border-top: 1px solid #DDDDDD;
     background: #213239;
-    /* background: -webkit-linear-gradient(to right, #31BDE6, #00003E);
-    background: linear-gradient(to right, #31BDE6, #00003E); */
+    
 }
 
 
@@ -22,7 +22,7 @@ body {
 	font-size: 18px;
 	font-weight: 600;
 	line-height: 27px;
-	padding: 40px 0 10px;
+	padding: 20px 0 10px;
 	text-transform: uppercase;
 }
 .footer ul {

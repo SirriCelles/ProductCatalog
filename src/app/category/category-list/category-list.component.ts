@@ -1,4 +1,9 @@
+import { Image } from './image.model';
+import { CategoryService } from './../category.service';
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
+import { Category } from '../category.model';
+declare var $: any;
 
 @Component({
   selector: 'app-category-list',
@@ -7,9 +12,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryListComponent implements OnInit {
 
-  constructor() { }
+ 
+  images: Image[] = [];
+  categories: Category[] = [];
 
-  ngOnInit() {
+  singleImage: Image[] =[];
+
+  constructor(private categoryService: CategoryService) { }
+
+  ngOnInit()
+  {
+    this.getCategory();
+
+  //  this.displayImages();
   }
 
+  
+  //to get all categories
+  getCategory(){
+    this.categoryService.getAllCategory().subscribe(response => {
+      this.categories = response;
+      // console.log(this.categories);
+            
+    }, error => {
+      console.log(error);
+      
+    });
+  }
+
+  // displayImages(){
+  //   this.categoryService.getImages().subscribe( (data) => {
+  //   });
+  // }
+
 }
+
