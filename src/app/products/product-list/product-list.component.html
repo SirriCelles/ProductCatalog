@@ -1,1 +1,25 @@
-<p>product-list works!</p>
+
+<!-- displays product list in a tabular manner -->
+<div class = "container-fluid bg-light">
+    <marquee>
+        <h4 class = "text-capitalize productlist-message bg-light">our complete list of products</h4>
+    </marquee>
+    <table class = "table bg-light">
+        <thead>
+                <th>Thumbnail</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Quantity</th>
+                <th>Price/FCFA</th>
+        </thead>
+        <tbody class = "text-primary">
+            <tr *ngFor = "let product of products">
+                <td>thumbnail here</td>
+                <td>{{product.name}}</td>
+                <td>{{product.category.name}}</td>
+                <td>{{product.quantity}}</td>
+                <td>{{product.price}}</td> 
+            </tr>
+        </tbody>
+    </table>
+</div>

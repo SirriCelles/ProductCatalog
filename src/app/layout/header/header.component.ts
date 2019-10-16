@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService} from '../../products/product.service';
+import { Product} from '../../products/product.model';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  public products : Product[];
+
+  // inject service ProductService
+  constructor(private productService: ProductService) { }
 
   ngOnInit() {
+    
   }
-
+  
+  
+    
 }

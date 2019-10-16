@@ -20,6 +20,8 @@ import { CategoryCreateComponent } from './category/category-create/category-cre
 import { CategoryDeleteComponent } from './category/category-list/category-delete/category-delete.component';
 import { SearchComponent } from './layout/header/search/search.component';
 import { CategoryMainPageComponent } from './category/category-main-page/category-main-page.component';
+import { SignUpComponent } from './authentication/sign-up/sign-up.component';
+import { LogInComponent } from './authentication/log-in/log-in.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { CategoryMainPageComponent } from './category/category-main-page/categor
     CategoryDeleteComponent,
     SearchComponent,
     CategoryMainPageComponent,
+    SignUpComponent,
+    LogInComponent,
     
   ]
 ,
