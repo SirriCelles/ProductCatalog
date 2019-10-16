@@ -19,4 +19,9 @@ export class ProductListComponent implements OnInit {
           console.log(this.products);
         });
   }
+
+  // displays view product details message on hover over the thumbnail
+  viewProductDetails($event){
+    console.log("View Product details", $event);
+  }
 }

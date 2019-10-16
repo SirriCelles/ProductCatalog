@@ -16,6 +16,9 @@ export class ProductService {
     return this.http.get<Product[]>("https://product-api-gg-c.herokuapp.com/api/products");
   }
   //edits a product
-  //saves a product
+
+  //adds a product
+  
+  
   //deletes a product
 }
