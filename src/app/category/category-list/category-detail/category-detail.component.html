@@ -1,0 +1,79 @@
+<div class="container-fluid">
+    <div class="d-flex mb-2">
+        <div>
+            <button type="button" class="btn rounded-0 shadow mb-3" style="background: black; color: whitesmoke;">
+                <i class="fa fa-hand-o-left"></i>
+                All Categories
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1 col-md-1 col-lg-1">
+            <div style="margin-top:150px;">
+                <a href="#" 
+                    class="mx-auto tool-tip"
+                    data-toggle="tooltip" 
+                    title="Prev">
+                    <i class="fa fa-arrow-circle-left" style="font-size:36px; color: black;"></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-5 col-md-5 col-lg-5 bg-light shadow">
+            <div>
+                <img class="d-block w-100"
+                     src="https://cdn.pixabay.com/photo/2016/05/30/22/02/blossom-1425870_1280.jpg" alt="">
+            </div>
+
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4 bg-light">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item m-2">
+                    <a class="nav-link active" data-toggle="tab" href="#category-detail" 
+                        style="background: black; color: whitesmoke;">
+                        Details
+                    </a>
+                </li>
+                <li class="nav-item my-2">
+                    <a class="nav-link" 
+                        data-toggle="tab"
+                        href="#category-edit-nav" 
+                        (click)="onEditCategory()" 
+                        style="background: black; color: whitesmoke; cursor: pointer;">
+                        <i class="fa fa-edit" style="font-size:20px; color: whitesmoke;"></i>Edit
+                    </a>
+                </li>
+                <li class="nav-item m-2">
+                    <a class="nav-link" 
+                        style="background: black; color: whitesmoke; cursor: pointer;">
+                        <i class="fa fa-trash" style="font-size:20px; color: whitesmoke;"></i>Delete
+                    </a>
+                </li>
+            </ul>
+        
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div id="category-detail" class="container tab-pane active"><br>
+                    <h3 class="m-3">{{category.name}}</h3>
+                    <input type="hidden" value="{{category.id}}" #categoryId>
+                    <h4>Some Description</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div id="category-edit-nav" class="container tab-pane fade"><br>
+                    hello
+                    <router-outlet></router-outlet>
+                </div>
+            </div>            
+        </div>
+        <div class="col-sm-1 col-md-1 col-lg-1 ml-2">
+            <div style="margin-top:150px;">
+                <a href="#" 
+                    class="mx-auto tool-tip"
+                    data-toggle="tooltip" 
+                    title="Next">
+                    <i class="fa fa-arrow-circle-right" style="font-size:36px; color: black;"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
