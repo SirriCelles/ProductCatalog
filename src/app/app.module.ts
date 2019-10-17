@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,9 @@ import { CategoryEditComponent } from './category/category-list/category-edit/ca
 import { CategoryCreateComponent } from './category/category-create/category-create.component';
 import { CategoryDeleteComponent } from './category/category-list/category-delete/category-delete.component';
 import { SearchComponent } from './layout/header/search/search.component';
+import { CategoryMainPageComponent } from './category/category-main-page/category-main-page.component';
+import { SignUpComponent } from './authentication/sign-up/sign-up.component';
+import { LogInComponent } from './authentication/log-in/log-in.component';
 
 @NgModule({
   declarations: [
@@ -36,13 +40,18 @@ import { SearchComponent } from './layout/header/search/search.component';
     CategoryCreateComponent,
     CategoryDeleteComponent,
     SearchComponent,
+    CategoryMainPageComponent,
+    SignUpComponent,
+    LogInComponent,
     
   ]
 ,
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
