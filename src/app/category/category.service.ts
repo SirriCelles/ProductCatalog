@@ -1,16 +1,18 @@
+import { Category } from './category.model';
 import { Image } from './category-list/image.model';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
-import { Category} from './category.model';
-import { Observable} from 'rxjs';
-import { map} from 'rxjs/operators';
+import { Observable, Subject} from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
+  postResSub = new Subject<string>();
+  postErrSub = new Subject<string>();
 
-  private apiURL = "https://product-api-gg-c.herokuapp.com/api";
+  private apiURL = "https://catalog-api-gg-c.herokuapp.com/api";
 
   private url : string = "/assets/images/images.json";
 
@@ -22,6 +24,7 @@ export class CategoryService {
   public lastPage: string = "";
 
   constructor(private http: HttpClient) { }
+  
 
 //getting images from image-database.json
   getImages(){
@@ -30,9 +33,18 @@ export class CategoryService {
      
   }
 
-  
-
-
+  //To create a new resource
+  createCategory(name: string, description: string) {
+    const category: Category = {name: name, description: description}
+    this.http.post(`${this.apiURL}/category`, category)
+    .subscribe(response => {
+      console.log(response);
+      
+    }, error => {
+      this.postErrSub.next(error);     
+    });
+    
+  }
 
   //function gets all categories
   getAllCategory():Observable<Category[]>
@@ -40,15 +52,9 @@ export class CategoryService {
     return this.http.get<Category[]>(`${this.apiURL}/category`, {responseType: "json"});
   }
 
-  
-//To get specific resource
-  getCategoryById() {
-
-  }
-
-  //To create a new resource
-  createCategory() {
-    
+  //To get specific resource
+  getCategoryById(id: number) {    
+      return this.http.get<Category>(`${this.apiURL}/category/${id}`);
   }
 
   editCategory() {
