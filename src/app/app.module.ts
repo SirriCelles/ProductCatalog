@@ -38,7 +38,8 @@ import { LogInComponent } from './authentication/log-in/log-in.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
     
   ],
   providers: [],

@@ -5,9 +5,12 @@
             <label>Name</label>
             <input type = "text"><br>
         </div>
-        <div class = "form-control">
+        <div class = "form-control" >
             <label>Category</label>
-            <input type = "text"><br>
+            <select  >
+                <option *ngFor = 'let category of Category' ([ng-model]) = "category.id">
+                    {{ category.name }}</option>
+            </select>
         </div>
         <div class = "form-control">
             <label>Quantity</label>
@@ -18,8 +21,8 @@
             <input type = "text"><br>
         </div>
         <div>
-            <label>Thumbnail</label>
-            <input type = "text" placeholder="image url here">
+            <label>Image URL</label>
+            <input type="text" placeholder="image url here">
         </div>
         <button>create</button>
     </form>

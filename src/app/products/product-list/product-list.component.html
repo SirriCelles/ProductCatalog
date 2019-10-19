@@ -16,11 +16,13 @@
         </thead>
         <tbody class = "text-primary">
             <tr *ngFor = "let product of products">
-                <td><a (click) = "viewProductDetails($event)">thumbnail here</a></td>
-                <td>{{product.name}}</td>
-                <td>{{product.category.name}}</td>
-                <td>{{product.quantity}}</td>
-                <td>{{product.price}}</td> 
+                <td><a (click) = "viewProductDetails($event)">
+                    <img [src] = "product.imageUrl" id = "product-Thumbnail">
+                </a></td>
+                <td class = "product-Content">{{product.name}}</td>
+                <td class = "product-Content">{{product.category.name}}</td>
+                <td class = "product-Content">{{product.quantity}}</td>
+                <td class = "product-Content">{{product.price}}</td> 
                 <td>
                     <button class = "text-danger">
                         <i class = "fa fa-minus" data-toggle = "tooltip" title="delete product"></i>
