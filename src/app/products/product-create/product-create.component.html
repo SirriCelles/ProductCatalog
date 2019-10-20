@@ -8,8 +8,10 @@
         <div class = "" >
             <label>Category</label>
             <select>
-                <option *ngFor = "let category of categories" class = "text-dark bg-dark">
-                    {{ category.id }}</option>
+                <option value="">Select a category</option>
+                <option *ngFor = "let category of categories" 
+                        [value]="category.id">{{category.name}}
+                </option>
             </select>
         </div>
         <div class = "">

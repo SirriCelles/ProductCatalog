@@ -20,10 +20,28 @@ export class ProductCreateComponent implements OnInit {
   //gets all categories on onit
   ngOnInit() {
     this.categoryService.getAllCategory()
-    .subscribe(function(data){
-      this.categories = data;
+    .subscribe((response) => {
+      this.categories = response         
+                 
+    }, error => {
+      console.log(error);
+      
+    });
+
+
+  }
+
+  //to get all categories
+  getCategory(){
+    this.categoryService.getAllCategory()
+    .subscribe(response => {
+      this.categories = response; 
       console.log(this.categories);
-    })
+                 
+    }, error => {
+      console.log(error);
+      
+    });
   }
 
   //creates a reactive form to add products

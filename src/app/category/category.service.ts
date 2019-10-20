@@ -1,16 +1,18 @@
+import { Category } from './category.model';
 import { Image } from './category-list/image.model';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
-import { Category} from './category.model';
-import { Observable} from 'rxjs';
-import { map} from 'rxjs/operators';
+import { Observable, Subject} from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
+  putErrSub = new Subject<string>();
+  postErrSub = new Subject<string>();
 
-  private apiURL = "https://product-api-gg-c.herokuapp.com/api";
+  private apiURL = "https://catalog-api-gg-c.herokuapp.com/api";
 
   private url : string = "/assets/images/images.json";
 
@@ -21,7 +23,9 @@ export class CategoryService {
   public nextPage: string = "";
   public lastPage: string = "";
 
+
   constructor(private http: HttpClient) { }
+  
 
 //getting images from image-database.json
   getImages(){
@@ -30,9 +34,18 @@ export class CategoryService {
      
   }
 
-  
-
-
+  //To create a new resource
+  createCategory(name: string, description: string) {
+    const category: Category = {name: name, description: description}
+    this.http.post(`${this.apiURL}/category`, category)
+    .subscribe(response => {
+      console.log(response);
+      
+    }, error => {
+      this.postErrSub.next(error);     
+    });
+    
+  }
 
   //function gets all categories
   getAllCategory():Observable<Category[]>
@@ -40,26 +53,31 @@ export class CategoryService {
     return this.http.get<Category[]>("https://catalog-api-gg-c.herokuapp.com/api/category");
   }
 
-  
-//To get specific resource
-  getCategoryById() {
-
+  //To get specific resource
+  getCategoryById(id: number) {    
+      return this.http.get<Category>(`${this.apiURL}/category/${id}`);
   }
 
-  //To create a new resource
-  createCategory() {
+
+  updateCategory(category: FormCategory) {   
     
-  }
-
-  editCategory() {
-
-  }
-
-  updateCategory() {
-
-  }
-
-  deleteCategory() {
+    return this.http.put(`${this.apiURL}/category/${category.id}`,category)
+    .subscribe(response => {  
+      console.log(response);
+             
+    }, error => {
+      this.putErrSub.next(error);     
+    });
 
   }
+
+  deleteCategory(id: number) {
+    return this.http.delete(`${this.apiURL}/category/${id}`);
+  }
+}
+
+export class FormCategory {
+  id: number;
+  name: string;
+  description: string;
 }

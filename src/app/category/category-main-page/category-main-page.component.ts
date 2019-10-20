@@ -28,8 +28,11 @@ export class CategoryMainPageComponent implements OnInit {
     $(document).ready(function(){
         //Activating carousel
         $("#category-carousel").carousel(
-          {interval: 3000, pause: "hover", keyboard: true}
+          {interval: 2000, pause: "hover", keyboard: true}
         ); 
+
+        //showing the Add Category Modal
+        
     });
 
     this.getCategoryImages();
@@ -53,6 +56,10 @@ export class CategoryMainPageComponent implements OnInit {
           console.log(error);
           
         });
+    }
+
+    onCreateCategory() {
+      return this.router.navigate(['create-category'], {relativeTo: this.route});
     }
   
 

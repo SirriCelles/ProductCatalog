@@ -44,7 +44,17 @@
                 </div>
         </div>
     </div>
-    <br><hr>
+    <br>
+    <!-- Button to Open the Modal create Category -->        
+    <button type="button" class="btn btn-outline-primary form-control"
+                data-toggle="modal" 
+                (click)="onCreateCategory()"
+                id="addCategoryBtn">
+                <i class="fa fa-plus-circle mr-1"></i>New Category
+    </button>    
+    <br>
+    <br>
+      
 
     <main>
         <router-outlet></router-outlet>
