@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { CategoryService } from './../category.service';
 import { Category } from './../category.model';
 import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
@@ -24,7 +25,8 @@ export class CategoryCreateComponent implements OnInit, OnDestroy {
     postCatError = null;
     private postCatErrorSubcription: Subscription;
 
-  constructor(private categoryService: CategoryService) { }
+  constructor(private categoryService: CategoryService,
+               private router: Router) { }
 
   ngOnInit() {
     this.getPostError();
@@ -35,11 +37,13 @@ export class CategoryCreateComponent implements OnInit, OnDestroy {
     this.catData.description = this.formData.form.value.description;
     this.categoryService.createCategory(this.catData.name, this.catData.description);
     this.dataSaved = true; 
-    this.successMessage = this.catName + "Category Successfully added."
+    this.successMessage = this.catName + " Category Successfully added."
 
     setTimeout( () => {
         this.formData.reset();
-    }, 5000);
+        this.router.navigateByUrl('/category/category-list');
+
+    }, 4000);
 
   }
 

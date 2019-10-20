@@ -1,8 +1,34 @@
 <div class="container-fluid">
     <!-- End of Carousel -->
+    <!-- <form>
+        <select [(ngModel)]="cat"
+                name="catSelected">
+            <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+        </select>
+    </form> -->
+    <div class="alert alert-danger alert-dismissible" *ngIf="!fetchingData && getCatError">
+        <button type="button" class="close" data-dismiss="alert">x</button>
+        <h6>Opps an Error Occured</h6>
+        <p>status: {{getCatError.status}}</p>
+        <p>message:  <br>
+            {{getCatError.message}}            
+        </p>
+        <button class="btn btn-danger mt-2" (click)="onHandleError()">Okay</button>
+    </div>
+    
+    <div class="form-control text-center mx-auto " 
+        style="border: none;"
+        *ngIf="!fetchingData && !getCatError">
+        <div><small>Loading...</small></div>
+        <br>
+        <div class="spinner-grow text-danger"></div>
+        <div class="spinner-grow text-secondary"></div>
+        <div class="spinner-grow text-dark"></div>
+        <div class="spinner-grow text-info"></div>
+    </div>
     
     <!-- Displaying Categories -->
-    <div class="row category-card-section">
+    <div class="row category-card-section" *ngIf="categories.length >= 1">
         <div class="card-deck">
             <div class="card bg-light" 
                 style="width:250px"
@@ -18,7 +44,7 @@
                         id="view-catDetail-button"
                         [routerLink]="['/category', category.id]"
                         >
-                        <i class="fa fa-eye mx-1" style="font-size:20px"></i>Details
+                        <i class="fa fa-eye" style="font-size:20px"></i>Details
                     </a>
                 </div>
             </div>

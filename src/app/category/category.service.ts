@@ -9,7 +9,7 @@ import { Observable, Subject} from 'rxjs';
   providedIn: 'root'
 })
 export class CategoryService {
-  postResSub = new Subject<string>();
+  putErrSub = new Subject<string>();
   postErrSub = new Subject<string>();
 
   private apiURL = "https://catalog-api-gg-c.herokuapp.com/api";
@@ -22,6 +22,7 @@ export class CategoryService {
   public prevPage: string = "";
   public nextPage: string = "";
   public lastPage: string = "";
+
 
   constructor(private http: HttpClient) { }
   
@@ -57,15 +58,24 @@ export class CategoryService {
       return this.http.get<Category>(`${this.apiURL}/category/${id}`);
   }
 
-  editCategory() {
 
-  }
-
-  updateCategory() {
+  updateCategory(category: FormCategory) {   
+    
+    return this.http.put(`${this.apiURL}/category/${category.id}`,category)
+    .subscribe(response => {         
+    }, error => {
+      this.putErrSub.next(error);     
+    });
 
   }
 
   deleteCategory() {
 
   }
+}
+
+export class FormCategory {
+  id: number;
+  name: string;
+  description: string;
 }

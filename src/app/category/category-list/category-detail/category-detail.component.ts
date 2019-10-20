@@ -22,7 +22,7 @@ export class CategoryDetailComponent implements OnInit {
     $(document).ready(function() {
       $(".tool-tip").tooltip();
     });
-    this.getRouteParams();
+    // this.getRouteParams();
     this.getCategoryDetail();
         
   }
@@ -39,24 +39,21 @@ export class CategoryDetailComponent implements OnInit {
   }
 
   getCategoryDetail(){
-    this.categoryId =  +this.route.snapshot.params['id'];
-    console.log(this.categoryId);   
+    this.categoryId =  +this.route.snapshot.params['id'];  
     this.categoryService.getCategoryById(this.categoryId).subscribe((data: Category) =>
     {
       this.category = data;
-      console.log(this.category.name);
-
-      
+            
     }, error => {
-      console.log(error);
-      
-    })
+      console.log(error);      
+    });
+
 
   }
 
-  onEditCategory() {
+  // onEditCategory() {
 
-    this.router.navigate(['/category/id/edit']);
-  }
+  //   this.router.navigate(['/category', this.category.id, 'edit']);
+  // }
 
 }
