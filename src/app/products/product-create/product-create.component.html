@@ -1,22 +1,22 @@
 <div class = " text-center">
     <h3>add a new product</h3>
-    <form class = "form-group">
-        <div class = "form-control">
+    <form class = "">
+        <div class = "">
             <label>Name</label>
             <input type = "text"><br>
         </div>
-        <div class = "form-control" >
+        <div class = "" >
             <label>Category</label>
-            <select  >
-                <option *ngFor = 'let category of Category' ([ng-model]) = "category.id">
-                    {{ category.name }}</option>
+            <select>
+                <option *ngFor = "let category of categories" class = "text-dark bg-dark">
+                    {{ category.id }}</option>
             </select>
         </div>
-        <div class = "form-control">
+        <div class = "">
             <label>Quantity</label>
             <input type = "text"><br>
         </div>
-        <div class = "form-control">
+        <div class = "">
             <label>Price</label>
             <input type = "text"><br>
         </div>

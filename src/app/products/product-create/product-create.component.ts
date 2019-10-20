@@ -12,7 +12,7 @@ import { Product } from '../product.model';
 })
 export class ProductCreateComponent implements OnInit {
 
-  Category : Category[];
+  categories : Category[];
   productInfo: Product[];
 
   constructor(private productService: ProductService, private categoryService: CategoryService) { }
@@ -21,20 +21,14 @@ export class ProductCreateComponent implements OnInit {
   ngOnInit() {
     this.categoryService.getAllCategory()
     .subscribe(function(data){
-      this.Category = data;
-      console.log(this.Category);
+      this.categories = data;
+      console.log(this.categories);
     })
   }
 
   //creates a reactive form to add products
    
-  createProductForm = new FormGroup({
-    productName : new FormControl(),
-    productCategory : new FormControl(),
-    productQuantity : new FormControl(),
-    productPrice : new FormControl(),
-    productThumbnail : new FormControl()
-  });
+ 
 
   //function executed on click of the create button and sends product information
   createProduct(categoryID){
