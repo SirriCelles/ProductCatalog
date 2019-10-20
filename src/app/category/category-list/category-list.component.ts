@@ -24,8 +24,7 @@ export class CategoryListComponent implements OnInit {
   ngOnInit()
   {
     this.getCategory();
-
-  //  this.displayImages();
+   this.displayImages();
   }
 
   
@@ -48,10 +47,13 @@ export class CategoryListComponent implements OnInit {
   }
 
   
-  // displayImages(){
-  //   this.categoryService.getImages().subscribe( (data) => {
-  //   });
-  // }
+  displayImages(){
+    this.categoryService.getImages().subscribe( (data) => {
+      this.images = data;
+      console.log(this.images);
+      
+    });
+  }
 
 }
 

@@ -50,7 +50,7 @@ export class CategoryService {
   //function gets all categories
   getAllCategory():Observable<Category[]>
   {
-    return this.http.get<Category[]>(`${this.apiURL}/category`, {responseType: "json"});
+    return this.http.get<Category[]>("https://catalog-api-gg-c.herokuapp.com/api/category");
   }
 
   //To get specific resource

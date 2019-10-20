@@ -1,11 +1,5 @@
 <div class="container-fluid">
     <!-- End of Carousel -->
-    <form>
-        <select [(ngModel)]="cat"
-                name="catSelected">
-            <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
-        </select>
-    </form>
     
     <div class="alert alert-danger alert-dismissible" *ngIf="!fetchingData && getCatError">
         <button type="button" class="close" data-dismiss="alert">x</button>
@@ -31,22 +25,24 @@
     <!-- Displaying Categories -->
     <div class="row category-card-section" *ngIf="categories.length >= 1">
         <div class="card-deck">
-            <div class="card bg-light" 
-                style="width:250px"
-                *ngFor="let category of categories; let i=index">
-
-                <div class="card-body">
-                        <img class="card-img-top" 
-                        src="https://cdn.pixabay.com/photo/2016/05/30/22/02/blossom-1425870_1280.jpg" 
-                        alt="Card image">
-                    <p class="card-title mt-3 category-name">{{category.name}}</p>
-                    <p class="card-text">{{singleImage.id}}</p>
-                    <a class="btn btn-primary stretched-link rounded-0"
-                        id="view-catDetail-button"
-                        [routerLink]="['/category', category.id]"
-                        >
-                        <i class="fa fa-eye" style="font-size:20px"></i>Details
-                    </a>
+            <div class="card-columns">
+                <div class="card bg-light" 
+                    style="width:300px"
+                    *ngFor="let category of categories; let i=index">    
+                    <div class="card-body">
+                            <div>
+                                <img class="card-img-top"
+                                src="" 
+                                alt="Card image">
+                            </div>
+                        <p class="card-title mt-3 category-name">{{category.name}}</p>
+                        <a class="btn btn-primary stretched-link rounded-0"
+                            id="view-catDetail-button"
+                            [routerLink]="['/category', category.id]"
+                            >
+                            <i class="fa fa-eye" style="font-size:20px"></i>Details
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -45,3 +45,14 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { } 
+
+// array of routing components
+export const routingComponents = [
+  CategoryDetailComponent,
+  CategoryEditComponent,
+  CategoryListComponent,
+  ProductListComponent,
+  ProductCreateComponent,
+  CategoryMainPageComponent,
+  MainLayoutComponent
+];

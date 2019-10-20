@@ -1,25 +1,30 @@
 <div class = " text-center">
     <h3>add a new product</h3>
-    <form class = "form-group">
-        <div class = "form-control">
+    <form class = "">
+        <div class = "">
             <label>Name</label>
             <input type = "text"><br>
         </div>
-        <div class = "form-control">
+        <div class = "" >
             <label>Category</label>
-            <input type = "text"><br>
+            <select>
+                <option value="">Select a category</option>
+                <option *ngFor = "let category of categories" 
+                        [value]="category.id">{{category.name}}
+                </option>
+            </select>
         </div>
-        <div class = "form-control">
+        <div class = "">
             <label>Quantity</label>
             <input type = "text"><br>
         </div>
-        <div class = "form-control">
+        <div class = "">
             <label>Price</label>
             <input type = "text"><br>
         </div>
         <div>
-            <label>Thumbnail</label>
-            <input type = "text" placeholder="image url here">
+            <label>Image URL</label>
+            <input type="text" placeholder="image url here">
         </div>
         <button>create</button>
     </form>
