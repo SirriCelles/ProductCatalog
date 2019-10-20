@@ -1,11 +1,12 @@
 <div class="container-fluid">
     <!-- End of Carousel -->
-    <!-- <form>
+    <form>
         <select [(ngModel)]="cat"
                 name="catSelected">
             <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
         </select>
-    </form> -->
+    </form>
+    
     <div class="alert alert-danger alert-dismissible" *ngIf="!fetchingData && getCatError">
         <button type="button" class="close" data-dismiss="alert">x</button>
         <h6>Opps an Error Occured</h6>

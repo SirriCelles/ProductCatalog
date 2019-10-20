@@ -62,15 +62,17 @@ export class CategoryService {
   updateCategory(category: FormCategory) {   
     
     return this.http.put(`${this.apiURL}/category/${category.id}`,category)
-    .subscribe(response => {         
+    .subscribe(response => {  
+      console.log(response);
+             
     }, error => {
       this.putErrSub.next(error);     
     });
 
   }
 
-  deleteCategory() {
-
+  deleteCategory(id: number) {
+    return this.http.delete(`${this.apiURL}/category/${id}`);
   }
 }
 

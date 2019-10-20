@@ -47,6 +47,8 @@
                 </li>
                 <li class="nav-item m-2">
                     <a class="nav-link" 
+                        data-toggle="tab"
+                        href="#category-delete-nav"
                         style="background: black; color: whitesmoke; cursor: pointer;">
                         <i class="fa fa-trash" style="font-size:20px; color: whitesmoke;"></i>Delete
                     </a>
@@ -66,6 +68,9 @@
                 </div>
                 <div id="category-edit-nav" class="container tab-pane fade"><br>
                     <app-category-edit></app-category-edit>
+                </div>
+                <div id="category-delete-nav" class="container tab-pane fade"><br>
+                    <app-category-delete></app-category-delete>
                 </div>
             </div>            
         </div>
