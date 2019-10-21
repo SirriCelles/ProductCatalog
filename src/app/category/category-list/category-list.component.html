@@ -2,9 +2,11 @@
     <!-- End of Carousel -->
     
     <div class="alert alert-danger alert-dismissible" *ngIf="!fetchingData && getCatError">
-        <button type="button" class="close" data-dismiss="alert">x</button>
         <h6>Opps an Error Occured</h6>
         <p>status: {{getCatError.status}}</p>
+        <p *ngIf="getCatError.status === 0">
+            <strong>Server Cannot be reached at this time. Please Check your internet connection.</strong>
+        </p>
         <p>message:  <br>
             {{getCatError.message}}            
         </p>
@@ -27,12 +29,12 @@
         <div class="card-deck">
             <div class="card-columns">
                 <div class="card bg-light" 
-                    style="width:300px"
+                    style="width:200px"
                     *ngFor="let category of categories; let i=index">    
                     <div class="card-body">
                             <div>
                                 <img class="card-img-top"
-                                src="" 
+                                src="https://cdn.pixabay.com/photo/2014/08/05/10/30/iphone-410324_1280.jpg" 
                                 alt="Card image">
                             </div>
                         <p class="card-title mt-3 category-name">{{category.name}}</p>

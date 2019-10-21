@@ -1,6 +1,7 @@
+import { Product } from './../../products/product.model';
 import { Image } from './image.model';
 import { CategoryService } from './../category.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Category } from '../category.model';
 
 
@@ -10,6 +11,8 @@ import { Category } from '../category.model';
   styleUrls: ['./category-list.component.css']
 })
 export class CategoryListComponent implements OnInit {
+
+  @Input() catProducts: Product[];
 
  
   images: Image[] = [];
@@ -25,6 +28,8 @@ export class CategoryListComponent implements OnInit {
   {
     this.getCategory();
    this.displayImages();
+   console.log(this.catProducts);
+   
   }
 
   
@@ -50,7 +55,7 @@ export class CategoryListComponent implements OnInit {
   displayImages(){
     this.categoryService.getImages().subscribe( (data) => {
       this.images = data;
-      console.log(this.images);
+      
       
     });
   }

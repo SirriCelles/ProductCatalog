@@ -5,6 +5,7 @@ import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { Category } from '../../category.model';
 import { NgForm } from '@angular/forms';
 
+
 @Component({
   selector: 'app-category-edit',
   templateUrl: './category-edit.component.html',
@@ -62,7 +63,7 @@ export class CategoryEditComponent implements OnInit, OnDestroy {
     
     setTimeout( () => {
       this.router.navigate(['category/category-list'])
-    }, 4000);
+    }, 3000);
 
   }
 

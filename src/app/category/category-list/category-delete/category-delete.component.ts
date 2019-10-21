@@ -15,6 +15,7 @@ export class CategoryDeleteComponent implements OnInit {
   showProgress = false;
   successMessage: string = '';
   removeWarning = false;
+  delError = null;
 
   constructor(private route: ActivatedRoute,
             private categoryService: CategoryService,
@@ -34,14 +35,16 @@ export class CategoryDeleteComponent implements OnInit {
       this.removeWarning = true;
       this.successMessage = " Category Successfully Deleted";
       console.log(response);
+      setTimeout(() => {
+        this.router.navigateByUrl('/category/category-list');
+      }, 2000);
       
     }, error => {
+      this.delError = error;
       console.log(error);      
     });
     
-    setTimeout(() => {
-      this.router.navigateByUrl('/category/category-list');
-    }, 2000);
+    
     
     
   }

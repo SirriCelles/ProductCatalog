@@ -1,7 +1,10 @@
 <div class="container-fluid">
     <div class="d-flex mb-2">
         <div>
-            <button type="button" class="btn rounded-0 shadow mb-3" style="background: black; color: whitesmoke;">
+            <button type="button" 
+                    routerLink='/category/category-list'
+                    class="btn rounded-0 shadow mb-3" 
+                    style="background: black; color: whitesmoke;">
                 <i class="fa fa-hand-o-left"></i>
                 All Categories
             </button>
@@ -21,11 +24,11 @@
         <div class="col-sm-5 col-md-5 col-lg-5 bg-light shadow">
             <div>
                 <img class="d-block w-100"
-                     src="https://cdn.pixabay.com/photo/2016/05/30/22/02/blossom-1425870_1280.jpg" alt="">
+                    src="https://cdn.pixabay.com/photo/2014/08/05/10/30/iphone-410324_1280.jpg" alt="">
             </div>
 
         </div>
-        <div class="col-sm-4 col-md-4 col-lg-4 bg-light">
+        <div class="col-sm-5 col-md-5 col-lg-5">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item m-2">
@@ -60,11 +63,25 @@
                 <div id="category-detail" 
                     class="container tab-pane active"
                     *ngIf="category"><br>
-                    <h6 class="center"><small>Category: </small> 
-                        {{ category.name}}</h6>
-                    <p><small>Description: </small>
+                    <h6 class="center"><small class="mr-2">Category:</small>
+                        {{category.name}}</h6>
+                    <p><small class="mr-1">Description:</small>
                         {{ category.description }}
+                    </p>                    
+                    <p>
+                        <small>Products:
+                            <span class="badge badge-primary ml-1">
+                                {{catProductsLength}}
+                            </span> 
+                        </small>
                     </p>
+                    <ul class="list-group">
+                        <a [routerLink]="['/products-list']"
+                            class="list-group-item list-group-item-action"
+                            *ngFor="let product of catProducts; let i=index">
+                            {{product.name}}                            
+                        </a>
+                    </ul>
                 </div>
                 <div id="category-edit-nav" class="container tab-pane fade"><br>
                     <app-category-edit></app-category-edit>
@@ -74,7 +91,7 @@
                 </div>
             </div>            
         </div>
-        <div class="col-sm-1 col-md-1 col-lg-1 ml-2">
+        <div class="col-sm-1 col-md-1 col-lg-1">
             <div style="margin-top:150px;">
                 <a href="#" 
                     class="mx-auto tool-tip"
