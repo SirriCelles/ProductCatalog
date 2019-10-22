@@ -1,8 +1,9 @@
+import { Subscription } from 'rxjs';
 import { ProductService } from './../../../products/product.service';
 import { Product } from './../../../products/product.model';
 import { Category } from './../../category.model';
 import { CategoryService } from './../../category.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 declare var $: any;
 
@@ -11,14 +12,18 @@ declare var $: any;
   templateUrl: './category-detail.component.html',
   styleUrls: ['./category-detail.component.css']
 })
-export class CategoryDetailComponent implements OnInit {
+export class CategoryDetailComponent implements OnInit, OnDestroy {
 
-  catProducts: Product[] = [];
-  
+  catProducts: Product[] = [];  
   category: Category;
   categoryId: number;
   products: Product[];
   catProductsLength: number;
+  randomImage: Product;
+  randomImageUrl: string;
+  imageMessage = null;
+
+  getProductsSub: Subscription;
 
   constructor(private route: ActivatedRoute, 
               private router: Router,
@@ -29,10 +34,10 @@ export class CategoryDetailComponent implements OnInit {
     $(document).ready(function() {
       $(".tool-tip").tooltip();
     });
-    // this.getRouteParams();
+    
     this.getRouteParams();
     this.getCategoryDetail();
-        
+            
   }
 
   getRouteParams(){
@@ -51,8 +56,12 @@ export class CategoryDetailComponent implements OnInit {
     }, error => {
       console.log(error);      
     });
+    this.getCatProducts();
+  }
 
-    this.productService.getAllProducts()
+
+  getCatProducts() {
+    this.getProductsSub = this.productService.getAllProducts()
     .subscribe( productList => {
       this.products = productList;
       for (let product of this.products) {
@@ -60,15 +69,40 @@ export class CategoryDetailComponent implements OnInit {
           this.catProducts.push(product);
         }        
       }
-      this.catProductsLength = this.catProducts.length;
+      this.catProductsLength = this.catProducts.length; 
+      let max:number = this.catProducts.length;
+      let min: number = 0
+      const index = this.randomNum(min, max); 
+      if(this.catProductsLength > 2) {
+        this.randomImage = this.catProducts[index];
+        this.randomImageUrl = this.randomImage.imageUrl;
+      }  
+      else if(this.catProductsLength == 1){
+        this.randomImage = this.catProducts[0];
+        this.randomImageUrl = this.randomImage.imageUrl;
+      }  
+      else{
+          this.randomImageUrl = "https://cdn.pixabay.com/photo/2014/08/05/10/30/iphone-410324_1280.jpg";
+          this.imageMessage = alert("There is no Image for this Category. See Default.");
+      }
     });
+  }
 
 
+
+  randomNum(min:number, max: number) { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
   // onEditCategory() {
 
   //   this.router.navigate(['/category', this.category.id, 'edit']);
   // }
+
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    this.getProductsSub.unsubscribe();
+  }
 
 }

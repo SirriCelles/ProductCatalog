@@ -1,4 +1,16 @@
 <div class="container">
+    <div class="d-flex mb-2">
+            <div>
+                <button type="button"
+                        id="AllCategories" 
+                        routerLink='/category/category-list'
+                        class="btn rounded-0 shadow mb-3" 
+                        style="color: whitesmoke;">
+                    <i class="fa fa-hand-o-left"></i>
+                    All Categories
+                </button>
+            </div>
+        </div>
     <div class="row">
         <div class="col-sm-1"></div>
         <div class="col-sm-9">
@@ -48,6 +60,7 @@
                     </div> -->
                 </div>
                 <button type="submit" 
+                        id="AllCategories"
                         class="btn btn-primary"
                         *ngIf="categoryName.valid && description.valid; else saveMessage">
                         Save

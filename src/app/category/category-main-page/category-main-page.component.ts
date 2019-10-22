@@ -1,3 +1,6 @@
+import { ProductService } from './../../products/product.service';
+import { Subscription } from 'rxjs';
+import { Product } from './../../products/product.model';
 import { CategoryService } from './../category.service';
 import { Image } from './../category-list/image.model';
 import { Component, OnInit } from '@angular/core';
@@ -13,14 +16,18 @@ declare var $: any;
 })
 export class CategoryMainPageComponent implements OnInit {
 
-  images: Image[] = [];
+  
+  catProducts: Product[];  
+  // images: Image[] = [];
   categories: Category[] = [];
 
-  singleImage: Image[] =[];
+  products: Subscription;
 
   constructor(private categoryService: CategoryService, 
               private router: Router,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private productService: ProductService
+              ) { }
 
   ngOnInit()
   {
@@ -29,13 +36,15 @@ export class CategoryMainPageComponent implements OnInit {
         //Activating carousel
         $("#category-carousel").carousel(
           {interval: 2000, pause: "hover", keyboard: true}
-        ); 
-
-        //showing the Add Category Modal
-        
+        );         
     });
 
-    this.getCategoryImages();
+    this.productService.getAllProducts()
+   .subscribe( productList => {
+    this.catProducts = productList;
+    }); 
+    
+    // this.getCategoryImages();
     this.onNavigate();
 
 
@@ -46,17 +55,17 @@ export class CategoryMainPageComponent implements OnInit {
     return this.router.navigate(['category-list'], {relativeTo: this.route});
   }
 
-    getCategoryImages(){
-        //Get images for Carosel
-        this.categoryService.getImages()
-        .subscribe((imageData: Image[]) => {
-          this.images = imageData;                
+    // getCategoryImages(){
+    //     //Get images for Carosel
+    //     this.categoryService.getImages()
+    //     .subscribe((imageData: Image[]) => {
+    //       this.images = imageData;                
           
-        }, error => {
-          console.log(error);
+    //     }, error => {
+    //       console.log(error);
           
-        });
-    }
+    //     });
+    // }
 
     onCreateCategory() {
       return this.router.navigate(['create-category'], {relativeTo: this.route});

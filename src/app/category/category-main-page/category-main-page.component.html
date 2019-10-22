@@ -14,23 +14,23 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img 
-                                class="d-block w-100" 
-                                src="https://cdn.pixabay.com/photo/2016/05/30/22/02/blossom-1425870_1280.jpg" 
+                                class="d-block w-100 img-responsive" 
+                                src="https://media.glamour.com/photos/5cdb2ce572cb4e7a10187bd2/16:9/w_1600%2Cc_limit/0515_selftanner_lede.jpg" 
                                 alt="" width="1000" height="350">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>...</h5>
                                 <p>...</p>
                             </div>
-                        </div>
-                        
-                        <div class="carousel-item" *ngFor="let image of images">
-                            <img class="d-block w-100" 
-                                src="{{image.imageUrl}}" 
-                                alt="{{image.id}}" height="350">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>{{image.id}}</h5>
-                                <p>...</p>
+                        </div>                        
+                        <div class="carousel-item" *ngFor="let image of catProducts">
+                                <div class="carousel-caption d-none d-md-block" 
+                                style="color: rgb(0, 0, 0);">
+                                <h5>{{image.category.name}}</h5>
+                                <p>{{image.name}}</p>
                             </div>
+                            <img class="d-block w-100 img-responsive" 
+                                src="{{image.imageUrl}}" 
+                                alt="{{image.name}}" height="350">                            
                         </div>
                     </div>
                     
@@ -46,7 +46,7 @@
     </div>
     <br>
     <!-- Button to Open the Modal create Category -->        
-    <button type="button" class="btn btn-outline-primary form-control"
+    <button type="button" class="btn form-control"
                 data-toggle="modal" 
                 (click)="onCreateCategory()"
                 id="addCategoryBtn">

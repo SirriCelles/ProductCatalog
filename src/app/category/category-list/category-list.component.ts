@@ -1,8 +1,8 @@
-import { Product } from './../../products/product.model';
 import { Image } from './image.model';
 import { CategoryService } from './../category.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Category } from '../category.model';
+declare var $ : any;
 
 
 @Component({
@@ -11,9 +11,7 @@ import { Category } from '../category.model';
   styleUrls: ['./category-list.component.css']
 })
 export class CategoryListComponent implements OnInit {
-
-  @Input() catProducts: Product[];
-
+  // @ViewChild('loadMessage', {static: true}) loadMessage;
  
   images: Image[] = [];
   categories: Category[] = [];
@@ -27,9 +25,7 @@ export class CategoryListComponent implements OnInit {
   ngOnInit()
   {
     this.getCategory();
-   this.displayImages();
-   console.log(this.catProducts);
-   
+   this.displayImages();   
   }
 
   
@@ -49,6 +45,7 @@ export class CategoryListComponent implements OnInit {
 
   onHandleError(){
     this.getCatError = null;
+     
   }
 
   

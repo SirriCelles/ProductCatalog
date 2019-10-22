@@ -3,8 +3,7 @@
         <div>
             <button type="button" 
                     routerLink='/category/category-list'
-                    class="btn rounded-0 shadow mb-3" 
-                    style="background: black; color: whitesmoke;">
+                    class="btn rounded-0 shadow mb-3 cat-detail-btn">
                 <i class="fa fa-hand-o-left"></i>
                 All Categories
             </button>
@@ -13,7 +12,7 @@
     <div class="row">
         <div class="col-sm-1 col-md-1 col-lg-1">
             <div style="margin-top:150px;">
-                <a href="#" 
+                <a routerLink='/category/category-list' 
                     class="mx-auto tool-tip"
                     data-toggle="tooltip" 
                     title="Prev">
@@ -23,37 +22,37 @@
         </div>
         <div class="col-sm-5 col-md-5 col-lg-5 bg-light shadow">
             <div>
-                <img class="d-block w-100"
-                    src="https://cdn.pixabay.com/photo/2014/08/05/10/30/iphone-410324_1280.jpg" alt="">
+                <p *ngIf="imageMessage">{{imageMessage}}</p> 
+                <img class="d-block w-100 h-50"                
+                    [src]="randomImageUrl" alt="Random product image ">                                       
             </div>
-
         </div>
         <div class="col-sm-5 col-md-5 col-lg-5">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item m-2">
-                    <a class="nav-link active"
+                    <a class="nav-link active cat-detail-btn"
                         data-toggle="tab"
-                        href="#category-detail" 
-                        style="background: black; color: whitesmoke;">
+                        href="#category-detail"
+                        style="color: whitesmoke;">
                         Details
                     </a>
                 </li>
                 <li class="nav-item my-2">
-                    <a class="nav-link" 
+                    <a class="nav-link cat-detail-btn" 
                         *ngIf="category"
                         data-toggle="tab"
                         href="#category-edit-nav"                        
-                        style="background: black; color: whitesmoke; cursor: pointer;">
-                        <i class="fa fa-edit" style="font-size:20px; color: whitesmoke;"></i>Edit
+                        style=" cursor: pointer;">
+                        <i class="fa fa-edit mr-1" style="font-size:20px; color: whitesmoke;"></i>Edit
                     </a>
                 </li>
                 <li class="nav-item m-2">
-                    <a class="nav-link" 
+                    <a class="nav-link cat-detail-btn" 
                         data-toggle="tab"
                         href="#category-delete-nav"
-                        style="background: black; color: whitesmoke; cursor: pointer;">
-                        <i class="fa fa-trash" style="font-size:20px; color: whitesmoke;"></i>Delete
+                        style="cursor: pointer;">
+                        <i class="fa fa-trash mr-1" style="font-size:20px; color: whitesmoke;"></i>Delete
                     </a>
                 </li>
             </ul>
@@ -79,7 +78,7 @@
                         <a [routerLink]="['/products-list']"
                             class="list-group-item list-group-item-action"
                             *ngFor="let product of catProducts; let i=index">
-                            {{product.name}}                            
+                            {{product.name}}                                                       
                         </a>
                     </ul>
                 </div>
@@ -93,7 +92,7 @@
         </div>
         <div class="col-sm-1 col-md-1 col-lg-1">
             <div style="margin-top:150px;">
-                <a href="#" 
+                <a routerLink='/products-list'
                     class="mx-auto tool-tip"
                     data-toggle="tooltip" 
                     title="Next">

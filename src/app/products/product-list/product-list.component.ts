@@ -1,6 +1,6 @@
+import { Product } from './../product.model';
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
-import { Product} from '../product.model';
 
 @Component({
   selector: 'app-product-list',
@@ -24,4 +24,6 @@ export class ProductListComponent implements OnInit {
   viewProductDetails($event){
     console.log("View Product details", $event);
   }
+
+  
 }
