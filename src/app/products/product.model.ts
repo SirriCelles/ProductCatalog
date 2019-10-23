@@ -10,4 +10,5 @@ export class Product {
     quantity: number;
     price: number;
     imageUrl: string;
+  
 }

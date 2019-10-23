@@ -8,8 +8,6 @@ import {Observable} from 'rxjs';
 })
 export class ProductService {
 
-  productInfo : Product[];
-
   constructor(private http: HttpClient) { }
 
   // gets list of all products from the api
@@ -20,8 +18,9 @@ export class ProductService {
   //edits a product
 
   //adds a product
-  addProduct(productInfo : Product[]){
-    return this.http.post("https://product-api-gg-c.herokuapp.com/api/products/category/", productInfo);
+  addProduct(productInfo: Product[]){
+    return this.http.post("https://product-api-gg-c.herokuapp.com/api/products/category/"+
+    , productInfo);
   }
   
   //deletes a product

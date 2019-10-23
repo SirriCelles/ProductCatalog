@@ -1,31 +1,56 @@
-<div class = " text-center">
-    <h3>add a new product</h3>
-    <form class = "">
-        <div class = "">
-            <label>Name</label>
-            <input type = "text"><br>
+<div class = "container-fluid">
+    <div class = "row row-styles">
+        <div class = "col-sm-2 bg-info"></div>
+        <div class = "col-sm-8  text-center bg-primary form-div">
+            <h3 class = "text-capitalize">add a new product</h3>
+            <form class = "form-group" (ngSubmit) = "createProduct(formdata)" #formdata = "ngForm">
+                <div class = "">
+                    <label>Name</label>
+                    <input 
+                    type = "text" 
+                    class = "form-control" 
+                    ngModel 
+                    name = "name"><br>
+                </div>
+                <div class = "" >
+                    <label>Category</label>
+                    <select 
+                    ([ngModel]) = "category.id"
+                    class = "form-control" 
+                    name = "categoryID">
+                        <option *ngFor = "let category of categories " class = "text-dark">
+                        {{category.name}}
+                        </option>
+                    </select><br>
+                </div>
+                <div class = "">
+                    <label>Quantity</label>
+                    <input 
+                    type = "text" 
+                    class = "form-control" 
+                    ngModel 
+                    name = "qty"><br>
+                </div>
+                <div class = "">
+                    <label>Price</label>
+                    <input 
+                    type = "text" 
+                    class = "form-control" 
+                    ngModel name = "price"><br>
+                </div>
+                <div>
+                    <label>Image URL</label>
+                    <input 
+                    type="text" 
+                    placeholder="image url here" 
+                    class = "form-control"
+                    ngModel 
+                    name = "url"><br>
+                </div>
+                <button class = "btn btn-warning w-5 " type = "submit">create</button>
+            </form>
         </div>
-        <div class = "" >
-            <label>Category</label>
-            <select>
-                <option value="">Select a category</option>
-                <option *ngFor = "let category of categories" 
-                        [value]="category.id">{{category.name}}
-                </option>
-            </select>
-        </div>
-        <div class = "">
-            <label>Quantity</label>
-            <input type = "text"><br>
-        </div>
-        <div class = "">
-            <label>Price</label>
-            <input type = "text"><br>
-        </div>
-        <div>
-            <label>Image URL</label>
-            <input type="text" placeholder="image url here">
-        </div>
-        <button>create</button>
-    </form>
+        <div class = "col-sm-2 bg-info"></div>
+    </div>
 </div>
+

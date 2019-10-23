@@ -4,38 +4,35 @@ import { CategoryService } from '../../category/category.service';
 import { ProductService} from '../product.service';
 import { Category} from '../../category/category.model';
 import { Product } from '../product.model';
+import { NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-product-create',
   templateUrl: './product-create.component.html',
   styleUrls: ['./product-create.component.css']
 })
+
+// interface of form to be submitted
+export interface ProductInformation{
+  name: string;
+  categoryId: number;
+  quantity: number;
+  price: number;
+}
 export class ProductCreateComponent implements OnInit {
 
   categories : Category[];
-  productInfo: Product[];
+  formdata: NgForm;
+  productInfo: ProductInformation[];
+ 
 
   constructor(private productService: ProductService, private categoryService: CategoryService) { }
 
   //gets all categories on onit
   ngOnInit() {
     this.categoryService.getAllCategory()
-    .subscribe((response) => {
-      this.categories = response         
-                 
-    }, error => {
-      console.log(error);
-      
-    });
-
-
-  }
-
-  //to get all categories
-  getCategory(){
-    this.categoryService.getAllCategory()
-    .subscribe(response => {
-      this.categories = response; 
+    .subscribe(data=>{
+      this.categories = data;
       console.log(this.categories);
                  
     }, error => {
@@ -49,11 +46,10 @@ export class ProductCreateComponent implements OnInit {
  
 
   //function executed on click of the create button and sends product information
-  createProduct(categoryID){
-   this.productService.addProduct(this.productInfo)
+  createProduct(formdata:NgForm){
+   this.productService.addProduct(formdata.value)
    .subscribe(data=>{
-     data = this.productInfo;
-     console.log(data);
+     
    })
   }
 
