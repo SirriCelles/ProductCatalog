@@ -34,7 +34,11 @@ export class ProductCreateComponent implements OnInit {
     .subscribe(data=>{
       this.categories = data;
       console.log(this.categories);
-    })
+                 
+    }, error => {
+      console.log(error);
+      
+    });
   }
 
   //creates a reactive form to add products

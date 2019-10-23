@@ -1,3 +1,4 @@
+import { CategoryCreateComponent } from './category/category-create/category-create.component';
 import { CategoryEditComponent } from './category/category-list/category-edit/category-edit.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { CategoryListComponent } from './category/category-list/category-list.component';
@@ -18,9 +19,10 @@ const routes: Routes = [
   {
     path: 'category', 
     component: CategoryMainPageComponent, children: [
-
+      
+      {path: 'create-category', component: CategoryCreateComponent},
       {path: 'category-list', component: CategoryListComponent},
-      {path:':id/:name', component: CategoryDetailComponent},
+      {path:':id', component: CategoryDetailComponent},
       {path: ':id/edit', component: CategoryEditComponent}     
     ]
     

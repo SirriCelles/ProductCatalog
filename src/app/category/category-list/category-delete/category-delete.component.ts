@@ -1,4 +1,7 @@
+import { CategoryService } from './../../category.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+declare var $: any;
 
 @Component({
   selector: 'app-category-delete',
@@ -7,9 +10,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryDeleteComponent implements OnInit {
 
-  constructor() { }
+  id: number;
+  showInfo = false;
+  showProgress = false;
+  successMessage: string = '';
+  removeWarning = false;
+
+  constructor(private route: ActivatedRoute,
+            private categoryService: CategoryService,
+            private router: Router) { }
 
   ngOnInit() {
+  }
+
+  onClickYes() {
+    this.showInfo = true;
+    this.showProgress = true;
+    this.id = +this.route.snapshot.params['id'];
+    this.categoryService.deleteCategory(this.id)
+    .subscribe(response => {
+      this.showInfo = false;
+      this.showProgress = false;
+      this.removeWarning = true;
+      this.successMessage = " Category Successfully Deleted";
+      console.log(response);
+      
+    }, error => {
+      console.log(error);      
+    });
+    
+    setTimeout(() => {
+      this.router.navigateByUrl('/category/category-list');
+    }, 2000);
+    
+    
+  }
+
+  onClickNo() {
+    $(document).ready(function() {
+        // Select tab by name
+        $('.nav-tabs a[href="#category-detail"]').tab('show')
+    });
   }
 
 }

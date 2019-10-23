@@ -29,39 +29,48 @@
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item m-2">
-                    <a class="nav-link active" data-toggle="tab" href="#category-detail" 
+                    <a class="nav-link active"
+                        data-toggle="tab"
+                        href="#category-detail" 
                         style="background: black; color: whitesmoke;">
                         Details
                     </a>
                 </li>
                 <li class="nav-item my-2">
                     <a class="nav-link" 
+                        *ngIf="category"
                         data-toggle="tab"
-                        href="#category-edit-nav" 
-                        (click)="onEditCategory()" 
+                        href="#category-edit-nav"                        
                         style="background: black; color: whitesmoke; cursor: pointer;">
                         <i class="fa fa-edit" style="font-size:20px; color: whitesmoke;"></i>Edit
                     </a>
                 </li>
                 <li class="nav-item m-2">
                     <a class="nav-link" 
+                        data-toggle="tab"
+                        href="#category-delete-nav"
                         style="background: black; color: whitesmoke; cursor: pointer;">
                         <i class="fa fa-trash" style="font-size:20px; color: whitesmoke;"></i>Delete
                     </a>
                 </li>
             </ul>
-        
+            <!-- [routerLink]="['/category', category.id, 'edit']"  -->
             <!-- Tab panes -->
             <div class="tab-content">
-                <div id="category-detail" class="container tab-pane active"><br>
-                    <h3 class="m-3">{{category.name}}</h3>
-                    <input type="hidden" value="{{category.id}}" #categoryId>
-                    <h4>Some Description</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div id="category-detail" 
+                    class="container tab-pane active"
+                    *ngIf="category"><br>
+                    <h6 class="center"><small>Category: </small> 
+                        {{ category.name}}</h6>
+                    <p><small>Description: </small>
+                        {{ category.description }}
+                    </p>
                 </div>
                 <div id="category-edit-nav" class="container tab-pane fade"><br>
-                    hello
-                    <router-outlet></router-outlet>
+                    <app-category-edit></app-category-edit>
+                </div>
+                <div id="category-delete-nav" class="container tab-pane fade"><br>
+                    <app-category-delete></app-category-delete>
                 </div>
             </div>            
         </div>
