@@ -73,7 +73,7 @@ export class CategoryDetailComponent implements OnInit, OnDestroy {
       let max:number = this.catProducts.length;
       let min: number = 0
       const index = this.randomNum(min, max); 
-      if(this.catProductsLength > 2) {
+      if(this.catProductsLength >= 2) {
         this.randomImage = this.catProducts[index];
         this.randomImageUrl = this.randomImage.imageUrl;
       }  

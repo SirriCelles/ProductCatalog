@@ -16,8 +16,7 @@ export class ProductListComponent implements OnInit {
     this.productService.getAllProducts()
     .subscribe( productList => {
       this.products = productList;
-          console.log(this.products);
-        });
+      });
   }
 
   // displays view product details message on hover over the thumbnail

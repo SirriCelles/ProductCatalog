@@ -14,7 +14,8 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img 
-                                class="d-block w-100 img-responsive" 
+                                class="d-block img-responsive" 
+                                id="carousel-image"
                                 src="https://media.glamour.com/photos/5cdb2ce572cb4e7a10187bd2/16:9/w_1600%2Cc_limit/0515_selftanner_lede.jpg" 
                                 alt="" width="1000" height="350">
                             <div class="carousel-caption d-none d-md-block">
@@ -23,23 +24,24 @@
                             </div>
                         </div>                        
                         <div class="carousel-item" *ngFor="let image of catProducts">
+                            <img class="d-block img-responsive"
+                                id="carousel-image" 
+                                src="{{image.imageUrl}}" 
+                                alt="{{image.name}}" height="350">  
                                 <div class="carousel-caption d-none d-md-block" 
                                 style="color: rgb(0, 0, 0);">
                                 <h5>{{image.category.name}}</h5>
                                 <p>{{image.name}}</p>
-                            </div>
-                            <img class="d-block w-100 img-responsive" 
-                                src="{{image.imageUrl}}" 
-                                alt="{{image.name}}" height="350">                            
+                            </div>                          
                         </div>
                     </div>
                     
                     <!-- Left and right controls -->
                     <a class="carousel-control-prev" href="#category-carousel" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
+                            <i class="fa fa-angle-left" style="font-size: 50px; color: black;"></i>
                     </a>
                     <a class="carousel-control-next" href="#category-carousel" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
+                        <i class="fa fa-angle-right" style="font-size: 50px; color: black;"></i>
                     </a>
                 </div>
         </div>
