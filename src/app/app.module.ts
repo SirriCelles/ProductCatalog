@@ -5,7 +5,7 @@ import { ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';
 import { FooterComponent } from './layout/footer/footer.component';
 import { ProductDetailComponent } from './products/product-list/product-detail/product-detail.component';
 import { ProductEditComponent } from './products/product-list/product-detail/product-edit/product-edit.component';
@@ -38,6 +38,7 @@ import { LogInComponent } from './authentication/log-in/log-in.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    
     FormsModule,
     ReactiveFormsModule
     

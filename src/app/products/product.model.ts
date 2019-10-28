@@ -1,5 +1,6 @@
-export class Product {
+import { ImageToBlob} from '../utilities/imageToBlob';
 
+export class Product {
     category: {
         name: string;
         id:number;
@@ -8,5 +9,6 @@ export class Product {
     quantity: number;
     price: number;
     imageUrl: string;
+    imageToBlob : ImageToBlob;
   
 }

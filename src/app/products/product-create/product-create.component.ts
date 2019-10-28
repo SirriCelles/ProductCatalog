@@ -12,20 +12,12 @@ import { NgForm} from '@angular/forms';
   styleUrls: ['./product-create.component.css']
 })
 
-// interface of form to be submitted
-export interface ProductInformation{
-  name: string;
-  categoryId: number;
-  quantity: number;
-  price: number;
-}
+// model of a product created on user interface
+
+
 export class ProductCreateComponent implements OnInit {
 
-  categories : Category[];
-  formdata: NgForm;
-  productInfo: ProductInformation[];
- 
-
+  categories : Category[]; 
   constructor(private productService: ProductService, private categoryService: CategoryService) { }
 
   //gets all categories on onit
@@ -33,23 +25,20 @@ export class ProductCreateComponent implements OnInit {
     this.categoryService.getAllCategory()
     .subscribe(data=>{
       this.categories = data;
-      console.log(this.categories);
-                 
     }, error => {
       console.log(error);
       
     });
   }
 
-  //creates a reactive form to add products
-   
- 
-
   //function executed on click of the create button and sends product information
   createProduct(formdata:NgForm){
-   this.productService.addProduct(formdata.value)
+    console.log(formdata);
+    console.log(formdata.value.categoryID);
+    //assigns values gotten from form object to local variables
+   this.productService.addProduct(formdata.value, formdata.value.categoryID)
    .subscribe(data=>{
-     
+    //  data = formdata.value;
    })
   }
 
