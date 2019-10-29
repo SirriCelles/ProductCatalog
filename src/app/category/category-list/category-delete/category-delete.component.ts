@@ -34,7 +34,7 @@ export class CategoryDeleteComponent implements OnInit {
       this.showProgress = false;
       this.removeWarning = true;
       this.successMessage = " Category Successfully Deleted";
-      console.log(response);
+      // console.log(response);
       setTimeout(() => {
         this.router.navigateByUrl('/category/category-list');
       }, 2000);

@@ -39,7 +39,7 @@ export class CategoryService {
     const category: Category = {name: name, description: description}
     this.http.post(`${this.apiURL}/category`, category)
     .subscribe(response => {
-      console.log(response);
+      // console.log(response);
       
     }, error => {
       this.postErrSub.next(error);     
