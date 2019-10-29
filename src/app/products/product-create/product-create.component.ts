@@ -46,11 +46,11 @@ export class ProductCreateComponent implements OnInit {
  
 
   //function executed on click of the create button and sends product information
-  createProduct(formdata:NgForm){
-   this.productService.addProduct(formdata.value)
-   .subscribe(data=>{
+  // createProduct(formdata:NgForm){
+  // //  this.productService.addProduct(formdata.value)
+  // //  .subscribe(data=>{
      
-   })
-  }
+  // //  })
+  // }
 
 }
