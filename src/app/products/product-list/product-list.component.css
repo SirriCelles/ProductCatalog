@@ -1,0 +1,11 @@
+/* .product-table{ */
+    
+/* } */
+
+/* styles welcome message on product list component */
+.productlist-message{
+    font-family: Lucida Calligraphy;
+    color: rgb(53, 2, 9);
+    margin-top: 1rem;
+    font-size: 2rem;
+}

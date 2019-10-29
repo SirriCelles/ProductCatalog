@@ -1,0 +1,106 @@
+<div class="bg-light">
+    <div class = "main-content">
+       <!--slideshow on rhome page--> 
+        <ngb-carousel
+        #mycarousel
+        [showNavigationArrows]="true"
+        [showNavigationIndicators]="true"
+        interval="5000"
+        [keyboard]="true"
+        [pauseOnHover]="true"
+        [wrap]="true"
+        [activeId]="slideTwo"
+        (slide)="onSlide($event)"
+        >
+          <ng-template ngbSlide id="slideOne">
+            <div class="picsum-img-wrapper image">
+               <img src="https://cdn.pixabay.com/photo/2014/12/16/03/37/motor-cycle-569865__340.jpg" width="800px" height="500px" alt="wait a minute" >
+            </div> 
+            <div class="carousel-caption">
+              <h5>Caption Text</h5>
+              <p>Motor Bike</p>
+            </div>
+          </ng-template>
+
+          <ng-template ngbSlide id="slideTwo">
+            <div class="picsum-img-wrapper image">
+               <img src="https://images.pexels.com/photos/262897/pexels-photo-262897.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="800px" height="500px" alt="wait a minute" >
+            </div> 
+            <div class="carousel-caption">
+              <h5>Caption Two</h5>
+              <p>Meals</p>
+            </div>
+          </ng-template>
+
+          <ng-template ngbSlide id="slideThree">
+              <div class="picsum-img-wrapper image">
+                 <img src="https://image.shutterstock.com/image-photo/coffee-blender-boiler-machine-great-260nw-69862267.jpg" width="800px" height="500px" alt="wait a minute" >
+              </div> 
+              <div class="carousel-caption" style="color: black">
+                <h5>Caption Three</h5>
+                <p>Coffee Bioler</p>
+              </div>
+            </ng-template>
+
+            <ng-template ngbSlide id="slideFour">
+                <div class="picsum-img-wrapper image">
+                   <img src="https://images.pexels.com/photos/264554/pexels-photo-264554.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="800px" height="500px" alt="wait a minute" >
+                </div> 
+                <div class="carousel-caption">
+                  <h5>Caption Four</h5>
+                  <p>Cloths and Shoes</p>
+                </div>
+              </ng-template>
+
+              <ng-template ngbSlide id="slideFive">
+                  <div class="picsum-img-wrapper image">
+                     <img src="https://cdn.pixabay.com/photo/2018/03/06/08/31/drone-3202860__340.jpg" width="800px" height="500px" alt="wait a minute" >
+                  </div> 
+                  <div class="carousel-caption">
+                    <h5>Caption Five</h5>
+                    <p>Electronic Accessories</p>
+                  </div>
+                </ng-template>
+          
+        </ngb-carousel>
+        
+          
+          <!--prev and next buttons
+          <a class="prev" onclick="plusSlides(-1)"> prev </a>
+          <a class="next" onclick="plusSlides(1)"> next </a>
+       </div>-->
+
+       <!-- the dots/circles
+       <div style="text-align: center;">
+         <span class="dot" onclick="currentSlide(1)"></span>
+         <span class="dot" onclick="currentSlide(2)"></span>
+         <span class="dot" onclick="currentSlide(3)"></span>
+         <span class="dot" onclick="currentSlide(4)"></span>
+         <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+
+        <script>
+          var slideIndex= 0;
+          showSlides();
+          function showSlides(params) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++){
+              slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            for (let i = 0; i < array.length; i++) {
+              dots[i].className = dots[i].className.replace("active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 2000); //change image every 2 seconds
+          }
+        </script>-->
+    </div>
+</div>
+
+<!-- displays product list on click of product link -->
+<router-outlet></router-outlet>

@@ -1,0 +1,14 @@
+.search-form .btn{
+    background: #0f6794;
+	background: linear-gradient(#1690c6, #0f6794);
+}
+
+
+.user-account i{
+    color:  #117DAC
+}
+
+.user-account a{
+    color: black;
+    text-decoration: none;
+}
