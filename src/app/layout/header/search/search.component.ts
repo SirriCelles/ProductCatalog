@@ -18,7 +18,7 @@ export class SearchComponent implements OnInit, OnChanges {
    ngOnChanges() {
     //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
     //Add '${implements OnChanges}' to the class.
-    console.log(this.componentName);
+    // console.log(this.componentName);
     
   }
 

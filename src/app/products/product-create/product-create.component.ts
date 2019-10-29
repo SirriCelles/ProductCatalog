@@ -13,17 +13,17 @@ import { NgForm} from '@angular/forms';
 })
 
 // interface of form to be submitted
-export interface ProductInformation{
-  name: string;
-  categoryId: number;
-  quantity: number;
-  price: number;
-}
+// export interface ProductInformation{
+//   name: string;
+//   categoryId: number;
+//   quantity: number;
+//   price: number;
+// }
 export class ProductCreateComponent implements OnInit {
 
   categories : Category[];
   formdata: NgForm;
-  productInfo: ProductInformation[];
+  // productInfo: ProductInformation[];
  
 
   constructor(private productService: ProductService, private categoryService: CategoryService) { }
