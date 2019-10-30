@@ -18,6 +18,7 @@
                     ([ngModel]) = "category.id"
                     class = "form-control" 
                     name = "categoryID">
+                        <option value="" selected>-- Select a category --</option>
                         <option *ngFor = "let category of categories " class = "text-dark">
                         {{category.name}}
                         </option>

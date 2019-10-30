@@ -8,6 +8,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProductCreateComponent } from './products/product-create/product-create.component';
 import { CategoryDetailComponent } from './category/category-list/category-detail/category-detail.component';
 import { CategoryMainPageComponent } from './category/category-main-page/category-main-page.component';
+import { ProductEditComponent } from './products/product-list/product-detail/product-edit/product-edit.component';
 
 // Routes
 const routes: Routes = [
@@ -37,7 +38,10 @@ const routes: Routes = [
   },
   {
     path:'add-product', component:ProductCreateComponent
-  }
+  },
+  {path: 'edit-product/:id', component: ProductEditComponent},
+
+
 ];
 
 @NgModule({

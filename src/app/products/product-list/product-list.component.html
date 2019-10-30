@@ -4,7 +4,12 @@
     <marquee>
         <h4 class = "text-capitalize productlist-message bg-light">our complete list of products</h4>
     </marquee>
-    
+    <div class="m-2">
+        <a routerLink = "/add-product" class="btn btn-primary shadow rounded-0 m-1">Add Product</a>
+    </div>  
+    <div>
+        <router-outlet></router-outlet>        
+    </div>
     <table class = "table bg-light">
         <thead>
                 <th>Thumbnail</th>
@@ -12,23 +17,29 @@
                 <th>Category</th>
                 <th>Quantity</th>
                 <th>Price/FCFA</th>
-                <th><a routerLink = "/add-product" class="btn btn-primary">Add Product</a></th>
+                <th></th>
+                <th></th>
         </thead>
         <tbody class = "text-primary">
             <tr *ngFor = "let product of products">
-                <td><a (click) = "viewProductDetails($event)">
+                <td>
                     <img [src] = "product.imageUrl" id = "product-Thumbnail">
-                </a></td>
+                </td>
                 <td class = "product-Content">{{product.name}}</td>
                 <td class = "product-Content">{{product.category.name}}</td>
                 <td class = "product-Content">{{product.quantity}}</td>
                 <td class = "product-Content">{{product.price}}</td> 
                 <td>
-                    <button class = "text-danger">
-                        <i class = "fa fa-minus" data-toggle = "tooltip" title="delete product"></i>
-                    </button>
-                    <button class = "text-success ml-5">
-                        <i class = "fa fa-edit" data-toggle="tooltip" title="edit product"></i>
+                    <a class="btn btn-primary"
+                        [routerLink]="['/edit-product', product.id]">
+                        <i class = "fa fa-edit" 
+                            style="font-size: 15px; color: whitesmoke;"></i>Edit
+                    </a>
+                </td>
+                <td>
+                    <button class="btn btn-danger">
+                        <i class = "fa fa-trash" 
+                            style="font-size: 15px; color: whitesmoke;"></i>Delete
                     </button>
                 </td>
             </tr>
