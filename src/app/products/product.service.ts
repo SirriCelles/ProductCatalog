@@ -41,17 +41,10 @@ export class ProductService {
   
 
   //adds a product under a given category
-  addProduct(productInfo: Product, categoryID:number):Observable<Product>
+  addProduct(productInfo: ProductForm, categoryID:number)
   {
-    let catID = categoryID;
-    let prodInfo = {
-      name: productInfo.name,
-      quantity: productInfo.quantity,
-      price: productInfo.price,
-      imageUrl: productInfo.imageUrl
-    }
-    return this.http.post<Product>("https://catalog-api-gg-c.herokuapp.com/api/products/category/"+catID, 
-    prodInfo)
+    let catID = categoryID; 
+    return this.http.post<Product>(`${this.apiURL}/products/category/${catID}`, productInfo)
     // .pipe(catchError(this.handleError('addProduct', productInfo)));
   }
   
@@ -73,3 +66,7 @@ export class ProductForm {
   price: number;
   imageUrl: string;
 }
+
+
+
+

@@ -3,7 +3,10 @@
         <div class = "col-sm-2 bg-info"></div>
         <div class = "col-sm-8  text-center bg-primary form-div">
             <h3 class = "text-capitalize">add a new product</h3>
-            <form class = "form-group" (ngSubmit) = "createProduct(formdata)" #formdata = "ngForm">
+            <div class="alert alert-success alert-dismissible m-2" *ngIf="dataSaved && !Error">
+                    {{ successMessage }}
+                </div>
+            <form class = "form-group" (ngSubmit) = "createProduct(formdata.value)" #formdata = "ngForm">
                 <div class = "">
                     <label>Name</label>
                     <input
