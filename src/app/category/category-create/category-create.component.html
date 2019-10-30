@@ -73,7 +73,7 @@
             <div class="alert alert-danger alert-dismissible" *ngIf="postCatError">
                 <button type="button" class="close" data-dismiss="alert">x</button>
                 <h2>Opps an Error Occured</h2>
-                <p>{{ postError.status + ' ' + postError.statusText }}</p>
+                <p>{{ postCatError.status + ' ' + postCatError.statusText }}</p>
                 <button class="btn btn-danger mt-2" (click)="onHandleError()">Okay</button>
             </div>
         </div>
