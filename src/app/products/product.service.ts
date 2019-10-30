@@ -19,12 +19,7 @@ export class ProductService {
   {
     return this.http.get<Product[]>("https://product-api-gg-c.herokuapp.com/api/products");
   }
-  //edits a product
-
-  // //adds a product
-  // addProduct(id:number, productInfo: Product[]){
-  //   return this.http.post("https://product-api-gg-c.herokuapp.com/api/products/category/"+id , productInfo);
-  // }
+  
 
   //To get specific resource
   getProductById(id: number) {       
@@ -63,7 +58,9 @@ export class ProductService {
   
   //deletes a product
   deleteProduct(productID:number){ 
-    return this.http.delete("https://catalog-api-gg-c.herokuapp.com/api/products/"+productID);
+    console.log(productID);
+    
+    return this.http.delete(`${this.apiURL}/products/${productID}`);
   }
 }
 
