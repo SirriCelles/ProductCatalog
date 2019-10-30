@@ -17,7 +17,7 @@ export class ProductService {
   // gets list of all products from the api
   getAllProducts():Observable<Product[]>
   {
-    return this.http.get<Product[]>("https://product-api-gg-c.herokuapp.com/api/products");
+    return this.http.get<Product[]>("https://catalog-api-gg-c.herokuapp.com/api/products");
   }
   
 
