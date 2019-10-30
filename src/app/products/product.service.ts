@@ -1,48 +1,42 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders  } from '@angular/common/http';
-import { Product } from './product.model';
-import { Observable } from 'rxjs';
-import { ImageToBlob } from '../utilities/imageToBlob';
+import {HttpClient} from '@angular/common/http';
+import {Product} from './product.model';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  productImgToBlob = new ImageToBlob();
+  product: Product;
   constructor(private http: HttpClient) { }
 
   // gets list of all products from the api
   getAllProducts():Observable<Product[]>
   {
-    return this.http.get<Product[]>("https://catalog-api-gg-c.herokuapp.com/api/products");
+    return this.http.get<Product[]>("https://product-api-gg-c.herokuapp.com/api/products");
   }
   //edits a product
 
-  //adds a product
-  addProduct(productInfo: Product, catID: number){
-    let ID ={ categoryID:catID}
+
+  //adds a product under a given category
+  addProduct(productInfo: Product, categoryID:number):Observable<Product>
+  {
+    let catID = categoryID;
     let prodInfo = {
       name: productInfo.name,
-      price: productInfo.price,
       quantity: productInfo.quantity,
+      price: productInfo.price,
       imageUrl: productInfo.imageUrl
-
     }
-      const Ourheader = new HttpHeaders({
-        'Content-Type':  'application/json',
-        'Authorization': 'my-auth-token'
-      });
-  
-
-
-    let postHeader={
-      headers: Ourheader
-    }
-    console.log(prodInfo);
-    return this.http.post("https://product-api-gg-c.herokuapp.com/api/products/category/"+ID.categoryID,
-    prodInfo,postHeader);
+    return this.http.post<Product>("https://catalog-api-gg-c.herokuapp.com/api/products/category/"+catID, 
+    prodInfo)
+    // .pipe(catchError(this.handleError('addProduct', productInfo)));
   }
   
+  
   //deletes a product
+  deleteProduct(productID:number){ 
+    return this.http.delete("https://catalog-api-gg-c.herokuapp.com/api/products/"+productID);
+  }
 }
