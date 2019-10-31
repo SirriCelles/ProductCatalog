@@ -1,0 +1,21 @@
+
+
+
+/* .carousel-inner .carousel-item{
+    width: 50;
+    height: 50;
+} */
+
+.category-card-section{
+
+}
+
+#view-catDetail-button{
+	height: 40px;
+	margin-left: 25%;
+	width: 50%;
+	
+	color: #fff;
+	background: #0f6794;
+	background: linear-gradient(#1690c6, #0f6794);
+}

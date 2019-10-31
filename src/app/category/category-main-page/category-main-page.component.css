@@ -1,0 +1,16 @@
+.category-carousel-row{
+    max-height: 350px; 
+    min-height: 200px;
+ }
+
+ #addCategoryBtn {
+    color: whitesmoke;
+     background: black;
+     background: linear-gradient( #213239, rgb(177, 172, 172))
+ }
+
+ #carousel-image{
+     width: 70%;
+     margin-left: 15%;
+     margin-right: 15%;
+ }

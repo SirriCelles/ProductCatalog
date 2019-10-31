@@ -1,0 +1,40 @@
+<div class="alert alert-light alert-dismissible fade show" 
+    id="category-delete-info"
+    *ngIf="showInfo">
+     All Products with this category will be deleted
+</div>
+<div class="alert alert-success alert-dismissible fade show" 
+    id="category-delete-info"
+    *ngIf="successMessage !== ''">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+     {{successMessage}}
+</div>
+<div class="alert alert-warning alert-dismissible fade show" 
+    id="category-delete-info"
+    *ngIf="delError">
+     <p>{{delError.error.error}} &nbsp; {{delError.error.status}}</p>
+     <p>{{delError.error.message}}</p>
+</div>
+
+<div class="alert alert-danger alert-dismissible fade show"
+    *ngIf="!removeWarning && !delError">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+     <strong> Are you sure you want to delete this category?</strong>
+     <div class="m-3">
+         <button type="button" 
+                class="btn btn-danger shadow rounded-0 mr-3"
+                (click)="onClickYes()">Yes
+        </button>
+         <button type="button" 
+                class="btn btn-secondary shadow rounded-0"
+                (click)="onClickNo()">No
+        </button>
+     </div>
+     <div class="progress mt-4"
+            *ngIf="showProgress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger rounded-0" 
+            style="width:60%">
+            deleting...
+        </div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="alert alert-success alert-dismissible" *ngIf="dataSaved && !putCatError">
+                <button type="button" class="close" data-dismiss="alert">x</button>
+                {{ successMessage }}
+            </div>
+            <form (ngSubmit)="onUpdate(formData.value)" #formData=ngForm>  
+                    <input type="hidden" 
+                        class="form-control"  
+                        ngModel
+                        name="categoryId"
+                        required>
+                <div class="form-group">
+                    <label for="cname">Category Name:</label>
+                    <input type="text" 
+                            class="form-control" 
+                            placeholder="New Category" 
+                            [(ngModel)]="catName"
+                            name="categoryName"
+                            #categoryName="ngModel" 
+                            required>
+                    
+                    <div class="text-danger font-weight-lighter"
+                        *ngIf="!categoryName.valid && categoryName.touched">            
+                        <small>* Please fill out this field</small>
+                    </div>
+            
+                    <div class="text-success font-weight-lighter"
+                        *ngIf="categoryName.valid && categoryName.dirty">valid
+                    </div>
+                            
+                </div>
+                <div class="form-group">
+                    <label for="desc">Description</label>
+                    <textarea type="password" 
+                            class="form-control" 
+                            placeholder="Description" 
+                            ngModel
+                            name="description"
+                            #description="ngModel" 
+                            required>
+                    </textarea>
+                    <div class="text-danger font-weight-lighter"
+                        *ngIf="!description.valid && description.touched">            
+                        <small>* Please fill out this field</small>
+                    </div>
+            
+                    <!-- <div class="text-success font-weight-lighter"
+                        *ngIf="description.valid && description.touched">valid
+                    </div> -->
+                </div>
+                <button type="submit" 
+                        class="btn btn-primary shadow m-1 rounded-0"
+                        *ngIf="categoryName.valid && description.valid; else saveMessage">
+                        Update
+                </button>
+            
+                <ng-template #saveMessage>
+                    <small class="font-weight-lighter">Enter Required Fields to Add New Category</small>
+                </ng-template>
+            </form>
+            <div class="alert alert-danger alert-dismissible" *ngIf="putCatError">
+                <button type="button" class="close" data-dismiss="alert">x</button>
+                <h2>Opps an Error Occured</h2>
+                <p>{{ putCatError.status + ' ' + putCatError.statusText }}</p>
+                <button class="btn btn-danger mt-2" (click)="onHandleError()">Okay</button>
+            </div>
+        </div>
+    </div>
+
+</div>

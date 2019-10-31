@@ -1,0 +1,13 @@
+[
+    {"id":1,"imageUrl":"https://cdn.pixabay.com/photo/2019/02/18/17/00/studio-4004852__340.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250"},
+    {"id":2,"imageUrl":"https://media-public.canva.com/MADatt2Wx1I/1/thumbnail_large-1.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250"},
+    {"id":3,"imageUrl":"https://cdn.pixabay.com/photo/2015/10/07/03/57/cars-975634__340.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250"},
+    {"id":4,"imageUrl":"https://cdn.pixabay.com/photo/2015/10/12/15/18/store-984393_960_720.jpg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250"},
+    {"id":5,"imageUrl":"https://cdn.pixabay.com/photo/2017/06/02/18/24/fruit-2367029__340.jpg?auto=compress&cs=tinysrgb&dpr=3&h=450&w=450"},
+    {"id":6,"imageUrl":"https://cdn.pixabay.com/photo/2014/12/16/03/37/motor-cycle-569865__340.jpg","text":"Motor Bike"},
+    {"id":7,"imageUrl":"https://images.pexels.com/photos/109641/pexels-photo-109641.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500","text":"Meals"},
+    {"id":8,"imageUrl":"https://image.shutterstock.com/image-photo/coffee-blender-boiler-machine-great-260nw-69862267.jpg","text":"Koffee Maker"},
+    {"id":9,"imageUrl":"https://images.pexels.com/photos/264554/pexels-photo-264554.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500","text":"Cloths and Shoes"},
+    {"id":10,"imageUrl":"https://cdn.pixabay.com/photo/2018/03/06/08/31/drone-3202860__340.jpg","text":"Electronic Accessories"}
+    
+]

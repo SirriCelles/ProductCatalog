@@ -1,0 +1,67 @@
+<div class = "container-fluid">
+    <div class = "row row-styles">
+        <div class = "col-sm-2 bg-info"></div>
+        <div class = "col-sm-8  text-center bg-primary form-div">
+            <h3 class = "text-capitalize">add a new product</h3>
+            <div class="alert alert-success alert-dismissible m-2" *ngIf="dataSaved && !Error">
+                    {{ successMessage }}
+                </div>
+            <form class = "form-group" (ngSubmit) = "createProduct(formdata.value)" #formdata = "ngForm">
+                <div class = "">
+                    <label>Name</label>
+                    <input
+                    required 
+                    ngModel
+                    type = "text" 
+                    class = "form-control" 
+                    name = "name"><br>
+                </div>
+                <div class = "" >
+                    <label>Category</label>
+                    <select
+                    name = "categoryID"
+                    ngModel
+                    class = "form-control custom-select" >
+                        <option 
+                        required
+                        *ngFor = "let category of categories " 
+                        value="{{category.id}}" 
+                        class = "text-dark">
+                        {{category.name}}
+                        </option>
+                    </select><br>
+                </div>
+                <div class = "">
+                    <label>Quantity</label>
+                    <input
+                    required 
+                    type = "text" 
+                    class = "form-control"
+                    ngModel 
+                    name = "quantity"><br>
+                </div>
+                <div class = "">
+                    <label>Price</label>
+                    <input
+                    required 
+                    type = "text" 
+                    class = "form-control"
+                    ngModel  
+                    name = "price"><br>
+                </div>
+                <div>
+                    <label>Image URL</label>
+                    <input
+                    type="file" 
+                    placeholder="image url here" 
+                    class = "form-control"
+                    ngModel
+                    name = "imageUrl"><br>
+                </div>
+                <button class = "btn btn-warning w-5 " type = "submit">create</button>
+            </form>
+        </div>
+        <div class = "col-sm-2 bg-info"></div>
+    </div>
+</div>
+

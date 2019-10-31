@@ -1,0 +1,104 @@
+<div class="container-fluid">
+    <div class="d-flex mb-2">
+        <div>
+            <button type="button" 
+                    routerLink='/category/category-list'
+                    class="btn rounded-0 shadow mb-3 cat-detail-btn">
+                <i class="fa fa-hand-o-left"></i>
+                All Categories
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1 col-md-1 col-lg-1">
+            <div style="margin-top:150px;">
+                <a routerLink='/category/category-list' 
+                    class="mx-auto tool-tip"
+                    data-toggle="tooltip" 
+                    title="Prev">
+                    <i class="fa fa-arrow-circle-left" style="font-size:36px; color: black;"></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-5 col-md-5 col-lg-5 shadow">
+            <div class="m-3">
+                <p *ngIf="imageMessage">{{imageMessage}}</p> 
+                <img class="d-block h-20 w-100 img-responsive"                
+                    [src]="randomImageUrl" alt="Random product image ">                                       
+            </div>
+        </div>
+        <div class="col-sm-5 col-md-5 col-lg-5">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item m-2">
+                    <a class="nav-link active cat-detail-btn"
+                        data-toggle="tab"
+                        href="#category-detail"
+                        style="color: whitesmoke;">
+                        Details
+                    </a>
+                </li>
+                <li class="nav-item my-2">
+                    <a class="nav-link cat-detail-btn" 
+                        *ngIf="category"
+                        data-toggle="tab"
+                        href="#category-edit-nav"                        
+                        style=" cursor: pointer;">
+                        <i class="fa fa-edit mr-1" style="font-size:20px; color: whitesmoke;"></i>Edit
+                    </a>
+                </li>
+                <li class="nav-item m-2">
+                    <a class="nav-link cat-detail-btn" 
+                        data-toggle="tab"
+                        href="#category-delete-nav"
+                        style="cursor: pointer;">
+                        <i class="fa fa-trash mr-1" style="font-size:20px; color: whitesmoke;"></i>Delete
+                    </a>
+                </li>
+            </ul>
+            <!-- [routerLink]="['/category', category.id, 'edit']"  -->
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div id="category-detail" 
+                    class="container tab-pane active"
+                    *ngIf="category"><br>
+                    <h6 class="center"><small class="mr-2">Category:</small>
+                        {{category.name}}</h6>
+                    <p><small class="mr-1">Description:</small>
+                        {{ category.description }}
+                    </p>                    
+                    <p>
+                        <small>Products:
+                            <span class="badge badge-primary ml-1">
+                                {{catProductsLength}}
+                            </span> 
+                        </small>
+                    </p>
+                    <ul class="list-group">
+                        <a [routerLink]="['/products-list']"
+                            class="list-group-item list-group-item-action"
+                            *ngFor="let product of catProducts; let i=index">
+                            {{product.name}}                                                       
+                        </a>
+                    </ul>
+                </div>
+                <div id="category-edit-nav" class="container tab-pane fade"><br>
+                    <app-category-edit></app-category-edit>
+                </div>
+                <div id="category-delete-nav" class="container tab-pane fade"><br>
+                    <app-category-delete></app-category-delete>
+                </div>
+            </div>            
+        </div>
+        <div class="col-sm-1 col-md-1 col-lg-1">
+            <div style="margin-top:150px;">
+                <a routerLink='/products-list'
+                    class="mx-auto tool-tip"
+                    data-toggle="tooltip" 
+                    title="Next">
+                    <i class="fa fa-arrow-circle-right" style="font-size:36px; color: black;"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
