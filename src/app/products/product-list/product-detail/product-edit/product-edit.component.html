@@ -28,7 +28,7 @@
                     <label>Category</label>
                     <select 
                     class = "form-control text-center" 
-                    [ngModel] = "categoryID"
+                    ngModel
                     name = "categoryselected">
                     <option value="" selected disabled>-- Select a Category --</option>
                         <option  *ngFor = "let category of categories " 
