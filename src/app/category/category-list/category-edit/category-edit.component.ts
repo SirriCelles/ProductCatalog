@@ -51,6 +51,8 @@ export class CategoryEditComponent implements OnInit, OnDestroy {
   }
 
   onUpdate(updateVal){
+    // console.log(updateVal);
+    
     this.putCategoryData = {
       id: updateVal.categoryId,
       name: updateVal.categoryName,

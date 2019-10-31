@@ -1,7 +1,7 @@
-<div class = "container-fluid">
+<div class = "container-fluid bg-light mb-5">
     <div class = "row row-styles">
-        <div class = "col-sm-2 bg-info"></div>
-        <div class = "col-sm-8  text-center bg-primary form-div">
+        <div class = "col-sm-3"></div>
+        <div class = "col-sm-6 form-div mt-3 shadow">
             <h3 class = "text-capitalize">add a new product</h3>
             <div class="alert alert-success alert-dismissible m-2" *ngIf="dataSaved && !Error">
                     {{ successMessage }}
@@ -16,7 +16,7 @@
                     class = "form-control" 
                     name = "name"><br>
                 </div>
-                <div class = "" >
+                <div class = "form-group" >
                     <label>Category</label>
                     <select
                     name = "categoryID"
@@ -31,7 +31,7 @@
                         </option>
                     </select><br>
                 </div>
-                <div class = "">
+                <div class = "form-group">
                     <label>Quantity</label>
                     <input
                     required 
@@ -40,7 +40,7 @@
                     ngModel 
                     name = "quantity"><br>
                 </div>
-                <div class = "">
+                <div class = "form-group">
                     <label>Price</label>
                     <input
                     required 
@@ -58,10 +58,20 @@
                     ngModel
                     name = "imageUrl"><br>
                 </div>
-                <button class = "btn btn-warning w-5 " type = "submit">create</button>
+                <br><hr>
+                <div class="clearfix">
+                    <div class="float-left">
+                        <button class = "btn btn-info w-5  shadow rounded-0" type = "submit">create</button>
+                    </div>
+                    <div class="float-right">
+                        <button class = "btn btn-outline-secondary w-5  shadow rounded-0" 
+                                type = "button"
+                                (click)="onCloseForm()">close</button>
+                    </div>
+                </div>
             </form>
         </div>
-        <div class = "col-sm-2 bg-info"></div>
+        <div class = "col-sm-2"></div>
     </div>
 </div>
 

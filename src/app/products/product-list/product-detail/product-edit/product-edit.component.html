@@ -1,7 +1,7 @@
-<div class = "container-fluid bg-light">
+<div class = "container-fluid bg-light mb-5">
     <div class = "row row-styles">
-        <div class = "col-sm-2"></div>
-        <div class = "col-sm-8 form-div">
+        <div class = "col-sm-3"></div>
+        <div class = "col-sm-6 form-div shadow bg-light mt-3">
             <h3 class = "text-capitalize">Edit product</h3>
             <div class="alert alert-success alert-dismissible m-2" *ngIf="dataSaved && !Error">
                 <button type="button" class="close" data-dismiss="alert">x</button>
@@ -63,7 +63,17 @@
                     ngModel 
                     name = "url">
                 </div>
-                <button class = "btn btn-primary" type = "submit">Update</button>
+                <br><hr>
+                <div class="clearfix">
+                    <div class="float-left">
+                        <button class = "btn btn-info w-5  shadow rounded-0" type = "submit">Update</button>
+                    </div>
+                    <div class="float-right">
+                        <button class = "btn btn-outline-secondary w-5  shadow rounded-0" 
+                                type = "button"
+                                (click)="onCloseForm()">close</button>
+                    </div>
+                </div>
             </form>
             
         </div>

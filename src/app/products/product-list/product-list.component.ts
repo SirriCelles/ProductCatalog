@@ -18,6 +18,8 @@ export class ProductListComponent implements OnInit {
   successMessage: string = '';
   removeWarning = false;
   delError = null;
+  getCatError = null;
+  fetchingData = false;
 
   constructor(private productService : ProductService,
               private router: Router) { }
@@ -27,7 +29,17 @@ export class ProductListComponent implements OnInit {
     this.productService.getAllProducts()
     .subscribe( productList => {
       this.products = productList;
-      });
+      this.fetchingData = true;
+    } , error => {      
+      this.getCatError = error;
+      this.fetchingData = false;
+      console.log(this.getCatError);      
+    });
+  }
+
+  onHandleError(){
+    this.getCatError = null;
+     
   }
 
   // displays view product details message on hover over the thumbnail
@@ -36,31 +48,34 @@ export class ProductListComponent implements OnInit {
   }
 
   onShowModal(id){
-    this.id = id;
-    
-    
+    this.id = id;    
   }
+
 
   onClickYes() {
     this.showInfo = true;
     this.showProgress = true;
-    console.log(this.id);    
+    // console.log(this.id);    
     this.productService.deleteProduct(this.id)
     .subscribe(response => {
       this.showInfo = false;
       this.showProgress = false;
       this.removeWarning = true;
       this.successMessage = "Product Successfully Deleted";
-      // console.log(response);
-      setTimeout(() => {
-        this.router.navigateByUrl('/products-list');
-      }, 3000);
-      
+      this.router.navigate(['/products-list']);      
+      // console.log(response);      
     }, error => {
       this.delError = error;
       console.log(error);      
     });
   }
+
+  onCloseDelete() {
+      this.router.navigate(['/products-list']);
+
+  }
+
+  
 
   
 }

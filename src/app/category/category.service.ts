@@ -60,6 +60,7 @@ export class CategoryService {
 
 
   updateCategory(category: FormCategory) {   
+    // console.log(category);
     
     return this.http.put(`${this.apiURL}/category/${category.id}`,category)
     .subscribe(response => {  
