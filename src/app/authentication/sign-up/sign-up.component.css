@@ -1,0 +1,19 @@
+.account {
+ margin-left: 300px;
+ max-width: 800px;
+ background-color: rgb(246, 246, 246);
+ border-radius: 10px;
+ padding-bottom: 10px; 
+ 
+}
+.sign{
+    justify-content: center;
+    padding: 15px 140px 15px 140px;
+    background-color: rgb(5, 104, 185);
+    max-width: 400px;
+    border-radius: 5px;
+    color: white;
+    
+}
+
+    

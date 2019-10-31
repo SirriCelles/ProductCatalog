@@ -11,7 +11,8 @@ body {
   color:#fff;
 	border-bottom: 1px solid #CCCCCC;
 	border-top: 1px solid #DDDDDD;
-    background: #213239;
+	background: #213239;
+	bottom: 0;
     
 }
 

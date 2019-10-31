@@ -1,6 +1,7 @@
 
 <!-- displays product list in a tabular manner -->
-<div class = "container-fluid bg-light">
+<div class = "container-fluid bg-light mb-5"
+    id="product-List">
     <marquee>
         <h4 class = "text-capitalize productlist-message bg-light">our complete list of products</h4>
     </marquee>
@@ -9,7 +10,7 @@
     </div>  
 
     <!-- display loading Message  -->
-    <div class="form-control text-center mx-auto " 
+    <div class="form-control text-center mx-auto" 
         style="border: none;"
         *ngIf="!fetchingData && !getCatError">
         <div>
