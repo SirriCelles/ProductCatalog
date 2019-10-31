@@ -64,4 +64,8 @@ export class ProductCreateComponent implements OnInit {
    });
   }
 
+  onCloseForm(){
+    this.router.navigate(['/products-list'])
+  }
+
 }

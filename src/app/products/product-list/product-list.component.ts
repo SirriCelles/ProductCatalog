@@ -19,6 +19,9 @@ export class ProductListComponent implements OnInit {
   removeWarning = false;
   delError = null;
 
+  getCatError = null;
+  fetchingData = false;
+
   constructor(private productService : ProductService,
               private router: Router) { }
 
@@ -27,7 +30,21 @@ export class ProductListComponent implements OnInit {
     this.productService.getAllProducts()
     .subscribe( productList => {
       this.products = productList;
-      });
+      this.fetchingData = true;
+    } , error => {
+      
+      this.getCatError = error;
+      this.fetchingData = false;
+      console.log(this.getCatError);
+      
+    });
+
+    
+  }
+
+  onHandleError(){
+    this.getCatError = null;
+     
   }
 
   // displays view product details message on hover over the thumbnail
@@ -37,7 +54,6 @@ export class ProductListComponent implements OnInit {
 
   onShowModal(id){
     this.id = id;
-    
     
   }
 

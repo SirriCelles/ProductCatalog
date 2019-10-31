@@ -1,22 +1,22 @@
-<div class = "container-fluid">
+<div class = "container-fluid bg-light mb-5">
     <div class = "row row-styles">
-        <div class = "col-sm-2 bg-info"></div>
-        <div class = "col-sm-8  text-center bg-primary form-div">
-            <h3 class = "text-capitalize">add a new product</h3>
+        <div class = "col-sm-3"></div>
+        <div class = "col-sm-6 form-div bg-light shadow m-2">
+            <h3 class = "text-capitalize text-center">add a new product</h3>
             <div class="alert alert-success alert-dismissible m-2" *ngIf="dataSaved && !Error">
                     {{ successMessage }}
                 </div>
             <form class = "form-group" (ngSubmit) = "createProduct(formdata.value)" #formdata = "ngForm">
-                <div class = "">
+                <div class = "form-group">
                     <label>Name</label>
                     <input
                     required 
                     ngModel
                     type = "text" 
                     class = "form-control" 
-                    name = "name"><br>
+                    name = "name">
                 </div>
-                <div class = "" >
+                <div class = "form-group" >
                     <label>Category</label>
                     <select
                     name = "categoryID"
@@ -29,25 +29,25 @@
                         class = "text-dark">
                         {{category.name}}
                         </option>
-                    </select><br>
+                    </select>
                 </div>
-                <div class = "">
+                <div class = "form-group">
                     <label>Quantity</label>
                     <input
                     required 
                     type = "text" 
                     class = "form-control"
                     ngModel 
-                    name = "quantity"><br>
+                    name = "quantity">
                 </div>
-                <div class = "">
+                <div class = "form-group">
                     <label>Price</label>
                     <input
                     required 
                     type = "text" 
                     class = "form-control"
                     ngModel  
-                    name = "price"><br>
+                    name = "price">
                 </div>
                 <div>
                     <label>Image URL</label>
@@ -56,12 +56,27 @@
                     placeholder="image url here" 
                     class = "form-control"
                     ngModel
-                    name = "imageUrl"><br>
+                    name = "imageUrl">
                 </div>
-                <button class = "btn btn-warning w-5 " type = "submit">create</button>
+                <br><hr>
+                <div class="clearfix">
+                    <div class="float-left mx-5">
+                        <button class = "btn btn-info w-5 shadow rounded-0" 
+                                type = "submit">create
+                        </button>
+                    </div>
+                    <div class="float-right mx-5">
+                        <button class = "btn btn-outline-secondary shadow rounded-0 w-5" 
+                                type = "button"
+                                (click)="onCloseForm()">close
+                        </button>
+                    </div>
+                </div>
+
+
             </form>
         </div>
-        <div class = "col-sm-2 bg-info"></div>
+        <div class = "col-sm-2"></div>
     </div>
 </div>
 
