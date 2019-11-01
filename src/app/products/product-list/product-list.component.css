@@ -19,10 +19,11 @@
 .product-Content{
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.5rem;
-    color: darkblue;
-    margin:0 auto;
+    color: black !important;
+    margin:0 auto ;
 }
 
-#product-List{
-    margin-bottom: 10%;
+
+.product-list{
+    background-color: aliceblue; 
 }
