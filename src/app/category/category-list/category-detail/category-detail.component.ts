@@ -66,26 +66,33 @@ export class CategoryDetailComponent implements OnInit, OnDestroy {
       this.products = productList;
       for (let product of this.products) {
         if (product.category.id === this.categoryId) {
-          this.catProducts.push(product);
+          this.catProducts.push(product);          
         }        
       }
       this.catProductsLength = this.catProducts.length; 
-      let max:number = this.catProducts.length;
-      let min: number = 0
-      const index = this.randomNum(min, max); 
-      if(this.catProductsLength >= 2) {
-        this.randomImage = this.catProducts[index];
-        this.randomImageUrl = this.randomImage.imageUrl;
-      }  
-      else if(this.catProductsLength == 1){
-        this.randomImage = this.catProducts[0];
-        this.randomImageUrl = this.randomImage.imageUrl;
-      }  
-      else{
-          this.randomImageUrl = "https://cdn.pixabay.com/photo/2014/08/05/10/30/iphone-410324_1280.jpg";
-          this.imageMessage = alert("There is no Image for this Category. See Default.");
-      }
+      // let max:number = this.catProducts.length;
+      // let min: number = 0
+      // const index = this.randomNum(min, max); 
+      // if(this.catProductsLength >= 2) {
+      //   this.randomImage = this.catProducts[index];
+      //   this.randomImageUrl = this.randomImage.imageUrl;
+      // }  
+      // else if(this.catProductsLength == 1){
+      //   this.randomImage = this.catProducts[0];
+      //   this.randomImageUrl = this.randomImage.imageUrl;
+      // }  
+      // else{
+      //     this.randomImageUrl = "https://cdn.pixabay.com/photo/2014/08/05/10/30/iphone-410324_1280.jpg";
+      //     this.imageMessage = alert("There is no Image for this Category. See Default.");
+      // }
     });
+  }
+
+  //method to show details of products under a certain category
+  onClickProduct(id:number){
+    console.log(id);
+    
+
   }
 
 

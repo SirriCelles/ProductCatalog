@@ -80,33 +80,27 @@
             </div>
     </div>
     <br><br>
-    <div class="row">
-        <!-- <div class="col-sm-1 col-md-1 col-lg-1">
-            <div style="margin-top:150px;">
-                <a routerLink='/category/category-list' 
-                    class="mx-auto tool-tip"
-                    data-toggle="tooltip" 
-                    title="Prev">
-                    <i class="fa fa-arrow-circle-left" style="font-size:36px; color: black;"></i>
-                </a>
-            </div>
-        </div> -->
-        <div class="col shadow">
-            <div class="m-3">
-                <p *ngIf="imageMessage">{{imageMessage}}</p> 
-                <img class="d-block h-20 w-100 img-responsive"                
-                    [src]="randomImageUrl" alt="Random product image ">                                       
-            </div>
+    <div class="row product-list-row">
+        <div class="col-4 col-sm-4 col-md-4 col-lg-4
+             nopadding product-list text-center" 
+            *ngFor="let product of catProducts">
+            <a (click)="onClickProduct(product.id)">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col nopadding">
+                            <img class="" height="190" width="275"              
+                            [src]="product.imageUrl" 
+                            alt="{{product.name}}"> 
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p>{{product.name}}</p>
+                            <p>{{product.price}}</p>
+                        </div>
+                    </div>
+                </div>  
+            </a>          
         </div>        
-        <!-- <div class="col-sm-1 col-md-1 col-lg-1">
-            <div style="margin-top:150px;">
-                <a routerLink='/products-list'
-                    class="mx-auto tool-tip"
-                    data-toggle="tooltip" 
-                    title="Next">
-                    <i class="fa fa-arrow-circle-right" style="font-size:36px; color: black;"></i>
-                </a>
-            </div>
-        </div> -->
     </div>
 </div>
