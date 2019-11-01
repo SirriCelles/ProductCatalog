@@ -58,4 +58,9 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
+  onHandleError(){
+    this.getCatError = null;
+     
+  }
+
 }

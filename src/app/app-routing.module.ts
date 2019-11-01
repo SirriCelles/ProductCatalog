@@ -34,7 +34,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'home', 
+    path: 'layout', 
     component: MainLayoutComponent
   },
   {

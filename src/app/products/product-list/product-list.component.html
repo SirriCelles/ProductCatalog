@@ -5,9 +5,11 @@
             <marquee class="">
                     <h4 class = "text-capitalize productlist-message">our complete list of products</h4>
             </marquee>
-                <div class="m-2 product-list">
-                    <a routerLink = "/add-product" class="btn btn-primary shadow rounded-0 m-1">Add Product</a>
-                </div>  
+                <div class="clearfix">
+                    <div class="mr-5 product-list float-right">
+                        <a routerLink = "/add-product" class="btn btn-primary shadow rounded-0 m-1">Add Product</a>
+                    </div> 
+                </div> 
                 <div>
                     <router-outlet></router-outlet>        
                 </div>
