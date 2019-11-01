@@ -26,15 +26,17 @@
                                 </div>
                             </div>                         
                             <div class="carousel-item" *ngFor="let image of catProducts">
-                                <img class="d-block img-responsive" 
-                                    id="carousel-image" 
-                                    src="{{image.imageUrl}}" 
-                                    alt="{{image.name}}" height="236">  
-                                <div class="carousel-caption d-none d-block" 
-                                    style="color: rgb(0, 0, 0);">
-                                    <strong>{{image.category.name}}</strong>
-                                    <p>{{image.name}}</p>
-                                </div>                          
+                                <a [routerLink]="['/product', image.id]">
+                                    <img class="d-block img-responsive" 
+                                        id="carousel-image" 
+                                        src="{{image.imageUrl}}" 
+                                        alt="{{image.name}}" height="236">  
+                                    <div class="carousel-caption d-none d-block" 
+                                        style="color: rgb(0, 0, 0);">
+                                        <strong>{{image.category.name}}</strong>
+                                        <p>{{image.name}}</p>
+                                    </div>  
+                                </a>                        
                             </div>
                         </div>
                         

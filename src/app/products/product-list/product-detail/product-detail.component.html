@@ -5,10 +5,18 @@
         <div class="col">
             <div class="row my-4">  
                 <!-- loading message -->
-                    <div class="align-center" *ngIf="!fetchingData && !getCatError">
-                        <div>Loading ...</div>
-                        <div class="spinner-border m-5"></div>
+                <div class="form-control text-center mx-auto " 
+                    style="border: none;"
+                    *ngIf="!fetchingData && !getCatError">
+                    <div>
+                        <small>Loading...</small>
                     </div>
+                    <br>
+                    <div class="spinner-grow text-danger"></div>
+                    <div class="spinner-grow text-secondary"></div>
+                    <div class="spinner-grow text-dark"></div>
+                    <div class="spinner-grow text-info"></div>
+                </div>
                        
                     <!-- display error message -->
                     <div class="alert alert-danger alert-dismissible" *ngIf="!fetchingData && getCatError">
