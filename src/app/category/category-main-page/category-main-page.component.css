@@ -9,8 +9,21 @@
      background: linear-gradient( #213239, rgb(177, 172, 172))
  }
 
- #carousel-image{
-     width: 70%;
-     margin-left: 15%;
+
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 70%;
+    margin-left: 15%;
      margin-right: 15%;
+  }
+  
+ #carousel-image{
+     /* width: 70%;
+     margin-left: 15%;
+     margin-right: 15%; */
+ }
+
+ .nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
  }

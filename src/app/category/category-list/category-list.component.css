@@ -11,11 +11,30 @@
 }
 
 #view-catDetail-button{
-	height: 40px;
+	/* height: 30px; */
 	margin-left: 25%;
-	width: 50%;
+	
 	
 	color: #fff;
 	background: #0f6794;
 	background: linear-gradient(#1690c6, #0f6794);
 }
+
+.nopadding {
+	
+	/* padding:0 !important;
+	margin:0 !important; */
+	margin-top:10px !important;
+	margin-bottom:10px !important;
+	
+
+ }
+
+ .image-hover:hover{
+	 cursor: pointer;
+
+ }
+
+ .category-list{
+
+ }

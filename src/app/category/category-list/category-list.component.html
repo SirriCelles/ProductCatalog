@@ -28,7 +28,34 @@
         </div>
     
     <!-- Displaying Categories -->
-    <div class="row category-card-section" *ngIf="categories.length >= 1">
+    <div class="row" *ngIf="categories.length >= 1">
+        <div class="col">
+            <h6>View Products by category</h6>
+        </div>
+    </div>
+    <div class="row shadow" *ngIf="categories.length >= 1">
+        <div class="col-4 nopadding border" *ngFor="let category of categories; let i=index">
+            <a [routerLink]="['/category', category.id]"
+                routerLinkActive="active">
+                <img src="https://cdn.pixabay.com/photo/2014/08/05/10/30/iphone-410324_1280.jpg" 
+                    class="img-thumbnail" alt="image">
+                <small class="mt-3 text-center "
+                    style="color: black;">{{category.name}}</small>
+            </a>   
+            
+
+            <!-- <a class="btn btn-primary stretched-link rounded-0 mb-2"
+                id="view-catDetail-button"
+                [routerLink]="['/category', category.id]"
+                >
+                <i class="fa fa-eye mr-2" style="font-size:20px"></i>Details
+            </a> -->
+        
+        </div>
+    </div>
+
+
+    <!-- <div class="row category-card-section" *ngIf="categories.length >= 1">
         <div class="col-sm-12 col-md-12 col-lg-12">
             <div class="card-columns" style="margin: 0;" >
                     <div class="card my-3" 
@@ -51,5 +78,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>

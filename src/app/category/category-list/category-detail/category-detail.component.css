@@ -1,5 +1,19 @@
 .cat-detail-btn {
+    height: 40px;
+    color: whitesmoke;
+    background: 	rgb(11, 12, 12);
+    /* background: 	#117DAC;
+    background: linear-gradient(#108fc2, #1372a0); */
+}
+
+.cat-detail-btn-btn {
+    height: 40px;
     color: whitesmoke;
     background: 	#117DAC;
     background: linear-gradient(#108fc2, #1372a0);
+}
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
 }

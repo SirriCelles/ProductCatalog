@@ -17,9 +17,10 @@ declare var $: any;
 export class CategoryMainPageComponent implements OnInit {
 
   
-  catProducts: Product[];  
+  catProducts: Product[] = [];  
   // images: Image[] = [];
   categories: Category[] = [];
+  catProductLength = null;
 
   products: Subscription;
 
@@ -35,13 +36,19 @@ export class CategoryMainPageComponent implements OnInit {
     $(document).ready(function(){
         //Activating carousel
         $("#category-carousel").carousel(
-          {interval: 2000, pause: "hover", keyboard: true}
+          {interval: 2000, keyboard: true}
         );         
     });
 
     this.productService.getAllProducts()
    .subscribe( productList => {
-    this.catProducts = productList;
+     for(let res of productList) {
+       if(res.imageUrl != null) {
+         this.catProducts.push(res);
+       }       
+     }    
+    this.catProductLength = this.catProducts.length;
+
     }); 
     
     // this.getCategoryImages();
