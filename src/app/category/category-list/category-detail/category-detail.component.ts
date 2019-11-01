@@ -89,11 +89,7 @@ export class CategoryDetailComponent implements OnInit, OnDestroy {
   }
 
   //method to show details of products under a certain category
-  onClickProduct(id:number){
-    console.log(id);
-    
-
-  }
+ 
 
 
 

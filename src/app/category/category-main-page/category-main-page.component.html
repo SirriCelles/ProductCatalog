@@ -21,8 +21,8 @@
                                     src="https://media.glamour.com/photos/5cdb2ce572cb4e7a10187bd2/16:9/w_1600%2Cc_limit/0515_selftanner_lede.jpg" 
                                     alt="" height="236">
                                 <div class="carousel-caption d-none d-block">
-                                    <h5>...</h5>
-                                    <p>...</p>
+                                    <h5 *ngIf="getError" style="color: black;">Waiting for images to load</h5>
+                                    <p></p>
                                 </div>
                             </div>                         
                             <div class="carousel-item" *ngFor="let image of catProducts">

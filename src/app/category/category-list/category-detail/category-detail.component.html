@@ -84,7 +84,7 @@
         <div class="col-4 col-sm-4 col-md-4 col-lg-4
              nopadding product-list text-center" 
             *ngFor="let product of catProducts">
-            <a (click)="onClickProduct(product.id)">
+            <a [routerLink]="['/product', product.id]">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col nopadding">

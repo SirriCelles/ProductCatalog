@@ -1,3 +1,4 @@
+import { ProductDetailComponent } from './products/product-list/product-detail/product-detail.component';
 import { CategoryCreateComponent } from './category/category-create/category-create.component';
 import { CategoryEditComponent } from './category/category-list/category-edit/category-edit.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
@@ -17,7 +18,7 @@ const routes: Routes = [
   {
     path: '', 
     pathMatch: 'full', 
-    redirectTo:'home'
+    redirectTo:'category'
   },
   {
     path: 'category', 
@@ -50,6 +51,7 @@ const routes: Routes = [
     path:'add-product', component:ProductCreateComponent
   },
   {path: 'edit-product/:id', component: ProductEditComponent},
+  {path: 'product/:id', component: ProductDetailComponent}
 
 
 ];

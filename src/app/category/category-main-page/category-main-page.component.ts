@@ -21,6 +21,7 @@ export class CategoryMainPageComponent implements OnInit {
   // images: Image[] = [];
   categories: Category[] = [];
   catProductLength = null;
+  getError = null;
 
   products: Subscription;
 
@@ -48,7 +49,8 @@ export class CategoryMainPageComponent implements OnInit {
        }       
      }    
     this.catProductLength = this.catProducts.length;
-
+    }, error => {
+      this.getError = error;
     }); 
     
     // this.getCategoryImages();
