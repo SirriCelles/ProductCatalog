@@ -12,3 +12,8 @@
     color: black;
     text-decoration: none;
 }
+
+.nopadding{
+    margin: 0 !important;
+    padding: 0 !important;
+}

@@ -104,6 +104,10 @@ export class ProductEditComponent implements OnInit {
     this.Error = null;
   }
 
+  onCloseForm(){
+    this.router.navigateByUrl('/products-list')
+  }
+
   ngOnDestroy(): void {
     //Called once, before the instance is destroyed.
     //Add 'implements OnDestroy' to the class.

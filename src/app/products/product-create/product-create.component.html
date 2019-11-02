@@ -1,13 +1,13 @@
-<div class = "container-fluid">
+<div class = "container bg-light">
     <div class = "row row-styles">
-        <div class = "col-sm-2 bg-info"></div>
-        <div class = "col-sm-8  text-center bg-primary form-div">
-            <h3 class = "text-capitalize">add a new product</h3>
+        <div class = "col-1 col-sm-2"></div>
+        <div class = "col col-sm-8 shadow p-4 form-div">
+            <h3 class = "text-capitalize m-2">add a new product</h3>
             <div class="alert alert-success alert-dismissible m-2" *ngIf="dataSaved && !Error">
                     {{ successMessage }}
                 </div>
             <form class = "form-group" (ngSubmit) = "createProduct(formdata.value)" #formdata = "ngForm">
-                <div class = "">
+                <div class = "form-group">
                     <label>Name</label>
                     <input
                     required 
@@ -15,10 +15,10 @@
                     type = "text" 
                     class = "form-control" 
                     name = "name"
-                    #name = "ngModel"><br>
+                    #name = "ngModel">
                     <span class="help-block" *ngIf = "name.valid"> Please enter a valid name</span>
                 </div>
-                <div class = "" >
+                <div class = "form-group" >
                     <label>Category</label>
                     <select
                     name = "categoryID"
@@ -31,25 +31,25 @@
                         class = "text-dark">
                         {{category.name}}
                         </option>
-                    </select><br>
+                    </select>
                 </div>
-                <div class = "">
+                <div class = "form-group">
                     <label>Quantity</label>
                     <input
                     required 
                     type = "text" 
                     class = "form-control"
                     ngModel 
-                    name = "quantity"><br>
+                    name = "quantity">
                 </div>
-                <div class = "">
+                <div class = "form-group">
                     <label>Price</label>
                     <input
                     required 
                     type = "text" 
                     class = "form-control"
                     ngModel  
-                    name = "price"><br>
+                    name = "price">
                 </div>
                 <div>
                     <label>Image URL</label>
@@ -60,10 +60,19 @@
                     ngModel
                     name = "imageUrl"><br>
                 </div>
-                <button class = "btn btn-warning w-5 " type = "submit">create</button>
+                <div class="clearfix">
+                    <div class="float-left">
+                        <button class = "btn btn-primary w-5 shadow rounded-0" type = "submit">create</button>
+                    </div>
+                    <div class="float-right">
+                        <button class = "btn btn-outline-secondary w-5 shadow rounded-0" 
+                                type = "button"
+                                (click)="onCloseForm()">close</button>
+                    </div>
+                </div>
             </form>
         </div>
-        <div class = "col-sm-2 bg-info"></div>
+        <div class = "col-1 col-sm-2"></div>
     </div>
 </div>
 

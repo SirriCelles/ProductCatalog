@@ -6,6 +6,11 @@
     background-size: cover;
 }
 
+.main-content img{
+    width: 80%;
+    /* height: 100%; */
+}
+
 .all-category{
     height: 8rem;
     padding:3rem;

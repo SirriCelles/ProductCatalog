@@ -43,7 +43,7 @@ export class ProductDetailComponent implements OnInit {
     this.productService.getAllProducts()
     .subscribe( productList => {  //   
       for(let i=0; i <= productList.length; i++) {
-        if(i < 3){
+        if(i < 5){
           this.products.push(productList[i]);
           this.fetchingData = true;          
         }
