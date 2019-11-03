@@ -1,3 +1,4 @@
+import { ErrorHandlerComponent } from './error-handler/error-handler.component';
 import { ProductDetailComponent } from './products/product-list/product-detail/product-detail.component';
 import { CategoryCreateComponent } from './category/category-create/category-create.component';
 import { CategoryEditComponent } from './category/category-list/category-edit/category-edit.component';
@@ -16,11 +17,6 @@ import { ProductEditComponent } from './products/product-list/product-detail/pro
 // Routes
 const routes: Routes = [
   {
-    path: '', 
-    pathMatch: 'full', 
-    redirectTo:'category'
-  },
-  {
     path: 'category', 
     component: CategoryMainPageComponent, children: [
 
@@ -32,7 +28,6 @@ const routes: Routes = [
     ]
     
   },
-
   {
     path: 'layout', 
     component: MainLayoutComponent
@@ -51,7 +46,9 @@ const routes: Routes = [
     path:'add-product', component:ProductCreateComponent
   },
   {path: 'edit-product/:id', component: ProductEditComponent},
-  {path: 'product/:id', component: ProductDetailComponent}
+  {path: 'product/:id', component: ProductDetailComponent},
+  {path: 'not-found', component: ErrorHandlerComponent},
+  {path: '**', redirectTo: '/not-found'}
 
 
 ];

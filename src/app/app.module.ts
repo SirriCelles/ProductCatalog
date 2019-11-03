@@ -23,6 +23,7 @@ import { SearchComponent } from './layout/header/search/search.component';
 import { CategoryMainPageComponent } from './category/category-main-page/category-main-page.component';
 import { SignUpComponent } from './authentication/sign-up/sign-up.component';
 import { LogInComponent } from './authentication/log-in/log-in.component';
+import { ErrorHandlerComponent } from './error-handler/error-handler.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { LogInComponent } from './authentication/log-in/log-in.component';
     CategoryMainPageComponent,
     SignUpComponent,
     LogInComponent,
+    ErrorHandlerComponent,
     
   ]
 ,

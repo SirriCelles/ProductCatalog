@@ -20,14 +20,14 @@ body {
 .footer h5 {
 	border-bottom: 1px solid #BAC1C8;
   color:#fff;
-	font-size: 18px;
+	font-size: 10px;
 	font-weight: 600;
 	line-height: 10px;
 	padding: 20px 0 10px;
 	text-transform: uppercase;
 }
 .footer ul {
-	font-size: 13px;
+	font-size: 10px;
 	list-style-type: none;
 	margin-left: 0;
 	padding-left: 0;
@@ -43,7 +43,7 @@ body {
     color:#fff;
 }
 .supportLi h4 {
-	font-size: 20px;
+	font-size: 15px;
 	font-weight: lighter;
 	line-height: normal;
 	margin-bottom: 0 !important;
@@ -52,13 +52,13 @@ body {
 
 .subscribe-btn .btn {
 	border: medium none;
-	border-radius: 4px;
+	border-radius: 2px;
 	display: inline-block;
-	height: 30px;
+	height: 20px;
 	padding: 0;
 	width: 100%;
 	color: #fff;
-	margin-top:10px;
+	margin-top:5px;
 	background: #0f6794;
 	background: linear-gradient(#1690c6, #0f6794);
 	
@@ -75,8 +75,8 @@ body {
 	-ms-border-radius: 50%;
 	border-radius: 50%;
 	float: left;
-	height: 30px;
-	line-height: 30px;
+	height: 20px;
+	line-height: 20px;
 	margin: 0 5px 0 0;
 	padding: 0;
 	text-align: center;
@@ -96,7 +96,7 @@ body {
 	background: #4c6c8b;
 }
 .social li a i {
-	font-size: 16px;
+	font-size: 10px;
 	margin: 0 0 0 5px;
 	color: #EDEFF1 !important;
 }
