@@ -16,7 +16,9 @@ import { ProductEditComponent } from './products/product-list/product-detail/pro
 
 // Routes
 const routes: Routes = [
+  {path: '', pathMatch: 'full', redirectTo: 'category/category-list'},
   {
+    
     path: 'category', 
     component: CategoryMainPageComponent, children: [
 
