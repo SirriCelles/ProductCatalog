@@ -2,11 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
+import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+
+
 import { MainLayoutComponent } from './layout/home-page/main-layout.component';
-import { HttpClientModule } from '@angular/common/http';
+
 import { FooterComponent } from './layout/footer/footer.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { ProductDetailComponent } from './products/product-list/product-detail/product-detail.component';
@@ -55,10 +61,21 @@ import { ErrorHandlerComponent } from './error-handler/error-handler.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    TranslateModule.forRoot({
+     loader: {
+      provide: TranslateLoader,
+      useFactory: HttpClientFactory,
+      deps: [HttpClient]
+     }
+    })
     
   ],
-  providers: [],
+  providers: [TranslateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function HttpClientFactory(http: HttpClient){
+  return new TranslateHttpLoader(http);
+}

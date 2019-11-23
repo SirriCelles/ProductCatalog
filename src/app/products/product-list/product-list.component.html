@@ -81,7 +81,14 @@
                     </tr>
                 </tbody>
             </table>
+            <div *ngIf="fetchingData" class="mt-5">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item"><a class="page-link" (click)="onPrev()">Previous</a></li>
+                    <li class="page-item"><a class="page-link" (click)="onNext()">Next</a></li>
+                </ul>
+            </div>
         </div>
+        
         <div class="col-sm-2 col-md-2 product-list"></div>
     </div>
     

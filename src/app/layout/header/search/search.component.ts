@@ -1,6 +1,7 @@
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -8,17 +9,19 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 })
 export class SearchComponent implements OnInit, OnChanges {
   @Input('search') componentName: string;
-  
+  // param = {value: 'this.componentName'};
+  messageBoxContent = TRANSLATE('Login');
 
   constructor(private route: ActivatedRoute) {
+    
+    
     
    }
 
   
-   ngOnChanges() {
+   ngOnChanges() {    
     //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
     //Add '${implements OnChanges}' to the class.
-    // console.log(this.componentName);
     
   }
 
@@ -26,7 +29,6 @@ export class SearchComponent implements OnInit, OnChanges {
     // console.log(this.componentName);
 
   }
-
   
 
   // getSequence(num:number){
@@ -40,6 +42,9 @@ export class SearchComponent implements OnInit, OnChanges {
   //     fib.push(fib[i] + fib[i-1]);
   //   }
   // }
-
   
+}
+
+export function TRANSLATE(str: string) {
+  return str;
 }

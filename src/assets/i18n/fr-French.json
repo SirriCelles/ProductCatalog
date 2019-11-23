@@ -1,0 +1,16 @@
+{
+	"LINKS": {
+		"HOME": "DOMICILE",
+		"LAYOUT": "DISPOSITION",
+		"PRODUCTS": "PRODUITS",
+		"login": "se connecter",
+		"navbrand": "CATALOGUE DES PRODUITS",
+		"search": "Chercher",
+		"signup": "Registre"
+	},
+	"TXT": {
+		"loading": "Chargement",
+		"viewCat": "Voir les produits par catégorie"
+	},
+	"cmpName": ""
+}

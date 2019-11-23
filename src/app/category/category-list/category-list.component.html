@@ -5,7 +5,7 @@
         style="border: none;"
         *ngIf="!fetchingData && !getCatError">
         <div>
-            <small>Loading...</small>
+            <small>{{'TXT.loading' | translate}}</small>
         </div>
         <br>
         <div class="spinner-grow text-danger"></div>
@@ -30,7 +30,7 @@
     <!-- Displaying Categories -->
     <div class="row" *ngIf="categories.length >= 1">
         <div class="col">
-            <h6>View Products by category</h6>
+            <h6>{{'TXT.viewCat' | translate}}</h6>
         </div>
     </div>
     <div class="row shadow" *ngIf="categories.length >= 1">

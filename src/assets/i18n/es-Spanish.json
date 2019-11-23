@@ -1,0 +1,16 @@
+{
+	"LINKS": {
+		"HOME": "Casa",
+		"LAYOUT": "diseño",
+		"PRODUCTS": "productos",
+		"login": "Iniciar sesión",
+		"navbrand": "Catalogo de producto",
+		"search": "Buscar",
+		"signup": "Regístrate"
+	},
+	"TXT": {
+		"loading": "Cargando",
+		"viewCat": "Ver productos por categoría"
+	},
+	"cmpName": ""
+}

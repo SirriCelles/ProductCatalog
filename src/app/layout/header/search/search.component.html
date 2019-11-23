@@ -3,38 +3,57 @@
     <div class="col">
         <div class="">
             <div class="row">
-                <div class="col-3 col-sm-3 col-md-3 col-lg-3">
+                <div class="col-4 col-sm-4 col-md-4 col-lg-4">
                     <div class="py-2 mr-auto">
                         <img src="/assets/images/cropped-gg.png" alt="GG-logo" style="width: 150px;">
                     </div>
                 </div>
-                <div class="col-6 col-sm-7 col-md-7 col-lg-7 nopadding">
-                    <div class="py-2">
-                        <form class="form-inline search-form">
-                            <div class="input-group">
-                                <input type="search" class="form-control" placeholder="Search" name="product.name">
-                                <div class="input-group-append">
-                                    <span class="input-group-text">{{componentName}}</span>
-                                    <!-- <button class="btn btn-primary" type="button">OK</button> -->
-                                    
-                                    <input class="btn btn-success" type="submit" value="Search">
-                                   
-                                </div> 
+                <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                    <div class="clearfix">
+                       <div class="float-right">
+                            <div class="user-account mx-3, mt-3">
+                                <small><a routerLink="/log-in"><i class="fa fa-sign-in"></i>{{'LINKS.login'|translate}}</a></small>
                             </div> 
-                        </form>
-                    </div> 
+                       </div>
+                       <div class="float-right">
+                        <div class="user-account mx-3 mt-3">
+                            <small><a routerLink="/sign-up"><i class="fa fa-user"></i>{{'LINKS.signup'|translate}}</a></small>
+                        </div> 
+                   </div>
+                    </div>
                 </div>
-                <div class="col-2 col-sm-1 col-md-1 col-lg-1">
+                
+                <!-- <div class="col-2 col-sm-2 col-md-2 col-lg-2">
                     <div class="user-account mt-3">
                         <small><a routerLink="/log-in"><i class="fa fa-sign-in"></i>Login</a></small>
                     </div> 
                 </div>
-                <div class="col-1 col-sm-1 col-md-1 col-lg-1 nopadding">
+                <div class="col-2 col-sm-2 col-md-2 col-lg-2">
                     <div class="user-account mt-3">
                         <small><a routerLink="/sign-up"><i class="fa fa-user"></i>Signup</a></small>
                     </div> 
+                </div> -->
+            </div> 
+            <div class="row">
+                <div class="col-11 col-sm-11 col-md-11 col-lg-11 nopadding">
+                    <div class="d-flex flex-row-reverse">
+                        <div class="py-2">
+                            <form class="form-inline search-form">
+                                <div class="input-group">
+                                    <input type="search" class="form-control"  name="product.name">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">{{componentName}}</span>
+                                        <!-- <button class="btn btn-primary" type="button">OK</button> -->
+                                        
+                                        <input class="btn btn-success" type="submit" [value]="'LINKS.search' | translate">
+                                       
+                                    </div> 
+                                </div> 
+                            </form>
+                        </div>
+                    </div> 
                 </div>
-            </div>         
+            </div>        
             <!-- <div class="p-2 mt-3 mx-4 user-account">
                 <a href="#">
                     <i class="fa fa-user" style="font-size:29px"></i>

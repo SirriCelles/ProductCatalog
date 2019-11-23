@@ -1,0 +1,16 @@
+{
+	"LINKS": {
+		"HOME": "HOME",
+		"LAYOUT": "LAYOUT",
+		"PRODUCTS": "PRODUCTS",
+		"login": "Login",
+		"navbrand": "PRODUCT CATALOG",
+		"search": "Search",
+		"signup": "Sign-up"
+	},
+	"TXT": {
+		"loading": "Loading",
+		"viewCat": "View Products by category"
+	},
+	"cmpName": "{{value}}"
+}

@@ -2,6 +2,9 @@
 <div class="container-fluid app-template">
     <header>
         <app-header></app-header>
+        <select #langSelect (change)="translate.use(langSelect.value)">
+            <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang}}</option>
+        </select>
     </header>
     <section class="bg-light">
         <router-outlet></router-outlet>

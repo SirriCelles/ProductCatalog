@@ -1,0 +1,16 @@
+{
+	"LINKS": {
+		"HOME": "家",
+		"LAYOUT": "布局",
+		"PRODUCTS": "制品",
+		"login": "登录",
+		"navbrand": "产品目录",
+		"search": "搜索",
+		"signup": "注册"
+	},
+	"TXT": {
+		"loading": "登录",
+		"viewCat": "按类别查看产品"
+	},
+	"cmpName": ""
+}

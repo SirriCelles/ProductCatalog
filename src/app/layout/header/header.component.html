@@ -1,7 +1,8 @@
 <!-- implimenting search -->
 <div>
     <app-search
-        [search]="searchName"></app-search>
+        [search]="searchName">
+    </app-search>
 </div>
 
 <!-- Navigation bar -->
@@ -13,7 +14,7 @@
     </div>    
         <!-- Brand -->
         <a class="navbar-brand" href="#" style="border-left: 2px;">
-            PRODUCT CATALOGUE
+           {{'LINKS.navbrand' | translate}}
         </a>
         <div id="vertical-line"></div>
         <small class="font-weight-lighter mr-3">GG-TRAINEE IV</small>     
@@ -24,24 +25,29 @@
                 <a class="nav-link"
                     [routerLink]="['/category/category-list']"
                     routerLinkActive = "active"
-                    ><i class="fa fa-home" style="font-size: 25px"></i> HOME
+                    ><i class="fa fa-home" style="font-size: 25px"></i> 
+                    {{'LINKS.HOME' | translate}}
                     
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link"
                 routerLink="/products-list"
-                routerLinkActive = "active">PRODUCTS
+                routerLinkActive = "active">
+                {{'LINKS.PRODUCTS' | translate}}
             </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" 
                     [routerLink]="['/layout']"
                     routerLinkActive = "active">
-                    LAYOUT
+                    {{'LINKS.LAYOUT' | translate}}
                 </a>
             </li>
         </ul>
+
+        <!-- <button (click)="onChangeLang('en')">English</button>
+        <button (click)="onChangeLang('fr')">French</button> -->
     </div>        
 </nav>
 

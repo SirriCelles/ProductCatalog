@@ -10,6 +10,10 @@ export class ProductService {
 
   private apiURL = "https://catalog-api-gg-c.herokuapp.com/api";
   putErrSub = new Subject<string>();
+  public firstPage: string ="";
+  public prevPage: string ="";
+  public nextPage: string ="";
+  public lastPage: string ="";
 
   product: Product;
   constructor(private http: HttpClient) { }

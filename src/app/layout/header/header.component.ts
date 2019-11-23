@@ -1,8 +1,8 @@
 import { Subscription } from 'rxjs';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { Component, OnInit, OnDestroy, OnChanges, Output, EventEmitter } from '@angular/core';
-import { Product} from '../../products/product.model';
 import { Location } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -17,19 +17,21 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
   routeSubscription: Subscription;
   routePath: string;
   searchName: string;
+  messageBoxContent = TRANSLATE('Login');
+  // param = {'value': this.searchName};
 
-  // inject service ProductService
-  constructor(private location: Location,
-              private  router: Router,private  route:ActivatedRoute) {                
+  
+  constructor( private location: Location, private router: Router){  }
 
- }
-
-  ngOnInit() {
+ 
+  ngOnInit() 
+  {
     this.routeSubscription =this.router.events.subscribe(val => {
 
       if (this.location.path() == "/category/category-list") {
         this.routePath = this.location.path();
         this.searchName = "Categories";
+        
       } 
       else if(this.location.path() == "/products-list") {
         this.routePath = this.location.path();
@@ -38,7 +40,7 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
       else{
         this.searchName = "search";
       }  
-      // console.log(this.searchName);      
+      //console.log(this.searchName);      
       // this.routeChange.emit(this.searchName);      
     });
     
@@ -57,7 +59,10 @@ export class HeaderComponent implements OnInit, OnDestroy, OnChanges {
     this.routeSubscription.unsubscribe();
     
   }
-  
-  
     
+}
+
+
+export function TRANSLATE(str: string) {
+  return str;
 }
