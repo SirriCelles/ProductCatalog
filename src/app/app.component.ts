@@ -16,18 +16,20 @@ export class AppComponent implements OnInit, OnDestroy{
 
   // }
 
-  constructor(private translate: TranslateService)
-  {  
-    // console.log(translate.);
+//   constructor(private translate: TranslateService)
+//   {  
+//     // console.log(translate.);
+  
+  
     
-    translate.addLangs(['en-English', 'fr-French','de-German', 'es-Spanish', 'zh-Chinese']);
-    //this language will be used as a fallback when a translation isn't found in the current language
-    translate.setDefaultLang('en-English');
+//     translate.addLangs(['en-English', 'fr-French','de-German', 'es-Spanish', 'zh-Chinese']);
+//     //this language will be used as a fallback when a translation isn't found in the current language
+//     translate.setDefaultLang('en-English');
 
-    // Changes the lang currently used
-      // the lang to use, if the lang isn't available, it will use the current loader to get them
-      translate.use('en-English');      
- }
+//     // Changes the lang currently used
+//       // the lang to use, if the lang isn't available, it will use the current loader to get them
+//       translate.use('en-English');      
+//  }
 
   ngOnInit(){
     
@@ -37,4 +39,6 @@ export class AppComponent implements OnInit, OnDestroy{
     
   }
 }
+
+
   

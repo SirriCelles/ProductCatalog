@@ -17,14 +17,6 @@
             <div class="col-12 border shadow" style="background: none;">
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs" role="tablist">
-                    <li class="nav-item mr-1">
-                        <a class="nav-link cat-detail-btn"
-                            data-toggle="tab"
-                            href="#category-detail"
-                            >
-                            details
-                        </a>
-                    </li>
                     <li class="nav-item mx-2">
                         <a class="nav-link cat-detail-btn" 
                             *ngIf="category"
@@ -40,6 +32,13 @@
                             href="#category-delete-nav"
                             style="cursor: pointer;">
                             <i class="fa fa-trash"></i>Delete
+                        </a>
+                    </li>
+                    <li class="nav-item mr-1">
+                        <a class="nav-link"
+                            data-toggle="tab"
+                            href="#category-detail"
+                            >
                         </a>
                     </li>                                                       
                 </ul>

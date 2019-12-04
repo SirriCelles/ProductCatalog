@@ -6,8 +6,8 @@
                     <h4 class = "text-capitalize productlist-message">our complete list of products</h4>
             </marquee>
                 <div class="clearfix">
-                    <div class="mr-5 product-list float-right">
-                        <a routerLink = "/add-product" class="btn btn-primary shadow rounded-0 m-1">Add Product</a>
+                    <div class="float-left">
+                        <a routerLink = "/add-product" class="btn btn-outline-info shadow rounded-0">Add Product</a>
                     </div> 
                 </div> 
                 <div>
@@ -81,12 +81,12 @@
                     </tr>
                 </tbody>
             </table>
-            <div *ngIf="fetchingData" class="mt-5">
+            <!-- <div *ngIf="fetchingData" class="mt-5">
                 <ul class="pagination justify-content-center">
-                    <li class="page-item"><a class="page-link" (click)="onPrev()">Previous</a></li>
-                    <li class="page-item"><a class="page-link" (click)="onNext()">Next</a></li>
+                    <li class="page-item"><a class="page-link">Previous</a></li>
+                    <li class="page-item"><a class="page-link">Next</a></li>
                 </ul>
-            </div>
+            </div> -->
         </div>
         
         <div class="col-sm-2 col-md-2 product-list"></div>

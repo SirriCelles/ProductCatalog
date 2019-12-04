@@ -1,3 +1,4 @@
+import { TranslateService } from '@ngx-translate/core';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
@@ -12,11 +13,18 @@ export class SearchComponent implements OnInit, OnChanges {
   // param = {value: 'this.componentName'};
   messageBoxContent = TRANSLATE('Login');
 
-  constructor(private route: ActivatedRoute) {
+   constructor(private route: ActivatedRoute, public translate: TranslateService)
+  {  
+    // console.log(translate.); 
     
-    
-    
-   }
+    translate.addLangs(['English', 'French','German', 'Spanish', 'Chinese']);
+    //this language will be used as a fallback when a translation isn't found in the current language
+    translate.setDefaultLang('English');
+
+    // Changes the lang currently used
+      // the lang to use, if the lang isn't available, it will use the current loader to get them
+      translate.use('English');      
+ }
 
   
    ngOnChanges() {    
